@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /www/htdocs/domains/s8/01255/www.yijiaowushu.com/etc/.htpasswd
+<Limit GET POST>
+require valid-user
+</Limit>

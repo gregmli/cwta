@@ -1,0 +1,11 @@
+# -FrontPage-
+
+Options None
+
+<Limit GET POST PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName www.yijiaowushu.com
+AuthUserFile /www/htdocs/domains/s8/01255/www.yijiaowushu.com/webdocs/_vti_pvt/service.pwd
+AuthGroupFile /www/htdocs/domains/s8/01255/www.yijiaowushu.com/webdocs/_vti_pvt/service.grp
