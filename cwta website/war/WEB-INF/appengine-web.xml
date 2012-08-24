@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-	<application>yijiaowushu</application>
+	<application>yijiaowushu-hrd</application>
 	<version>1-2012-03-04</version>
 	
 	<!-- Configure java.util.logging -->
