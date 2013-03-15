@@ -1,0 +1,28 @@
+application: yijiaowushu-hrd
+version: 2013-02-20
+runtime: python27
+api_version: 1
+threadsafe: true
+
+  
+libraries:
+- name: jinja2
+  version: latest
+
+
+handlers:
+
+- url: /scripts
+  static_dir: scripts
+
+- url: /styles
+  static_dir: styles
+
+- url: /images
+  static_dir: images
+
+- url: /parallax
+  static_dir: parallax
+
+- url: /.*
+  script: cwta.app

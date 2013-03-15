@@ -1,0 +1,322 @@
+/************************************************************************************\
+ 
+ common tags
+ 
+\************************************************************************************/
+
+body {
+	margin: 0;
+	padding: 0;
+	
+	font-family: "myriad-pro", helvetica, arial;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "myriad-pro-condensed", helvetica, arial;
+	font-weight: bold;	
+}
+
+h1 {
+	font-size: 44px;
+	line-height: 1.2em;
+	
+}
+
+h2 {
+	font-size: 36px;	
+}
+
+p {
+	line-height: 1.5em;
+	margin: 0.2em 0 1em;
+}
+
+a img {
+	border: 0 none;
+}
+
+
+/************************************************************************************\
+ 
+ global styles
+ 
+\************************************************************************************/
+
+
+.photobar {
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+	width: 100%;
+}
+
+.photobar .inner {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	padding: 80px 0;
+}
+
+
+.solidbar {
+	background-color: #fff;
+	padding: 30px 60px;
+	line-height: 150%;
+}
+
+.solidbar .primary {
+	width: 55%;
+	float: left;
+}
+
+.solidbar .secondary {
+	width: 35%;
+	float: left;
+	font-size: 0.9em;
+	font-weight: 300;
+	margin-left: 10%;
+	color: #444;
+}
+
+.breaker {
+	clear: both;
+	font-size: 1px;
+	height: 1px;
+}
+
+.solidbar h3 {
+	margin: 0 0 0.6em;
+	font-size: 1.6em;
+}
+
+#navbar {
+	background-color: #000;	
+	opacity: 0.80;
+}
+
+.navbar-top #navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	opacity: 1;
+}
+
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	height: 55px;
+}
+
+#navbar li {
+	list-style-type: none;
+
+	margin: 0;
+	padding: 0 1.5em;
+	font-family: futura-pt;
+	font-weight: 300;
+	font-size: 11pt;
+	text-transform: uppercase;
+	border-left: 1px solid #666;
+	display: block;
+	height: 55px;
+	float: left;
+	line-height: 55px;
+}
+
+#navbar li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#navbar li#sitelogo {
+	margin-top: -15px;
+	padding: 0 20px 0 5px;
+	height: 55px;
+	overflow: visible;
+}
+
+#navbar li#sitelogo img {
+	vertical-align: 80px;
+}
+
+
+.inner h1, .inner h2 span, .inner .blurb {
+	background-color: #000;
+	color: #fff;
+	opacity: 0.70;
+}
+
+.inner h2 {
+	margin: 0;
+	padding: 0;
+}
+
+.inner h2 span {
+	display: inline-block;
+	padding: 20px 30px;
+	margin: 0.2em 0 0;
+}
+
+.inner .blurb {
+	padding: 20px 30px;
+}
+
+.inner a {
+	color: #fff;
+}
+
+
+.photobar .blurb {
+	width: 300px;
+	margin-top: 1em;
+	font-weight: 300;
+}
+
+.photobar .blurb p {
+	font-size: 14px;
+}
+
+
+
+
+.photobar.contact h2 {
+	font-size: 2em;
+	color: #fff;
+	float: left;
+	width: 12em;
+	margin-top: 1em;
+}
+
+.photobar.contact h2 strong {
+	font-size: 1.4em;
+	line-height: 1.1em;
+}
+.photobar.contact h2 strong em {
+	line-height: 1.2em;
+	font-size: 1.8em;
+	font-style: normal;
+}
+
+.photobar.contact .location {
+	background-color: #fff;
+	background-color: rgba(255,255,255,0.9);
+	float: left;
+	width: 300px;
+	padding: 30px;
+}
+
+.photobar.contact .location a {
+	color: #004B91;
+}
+
+.photobar.contact .location .address {
+	margin-bottom: 1.2em;
+}
+
+.photobar.contact .location .map {
+	margin-top: 1.8em;
+	width: 300px;
+	height: 200px;
+	overflow: hidden;
+	border: 1px solid #666;
+}
+
+.photobar.contact .location .map img {
+	/* -(img_dimension/2 - box_dimension/2) */
+	position: relative;
+	left: -141px;
+	top: -198px;
+}
+
+
+
+/************************************************************************************\
+ 
+ homepage
+ 
+\************************************************************************************/
+
+#homepage .photobar.title .inner {
+	padding: 20px 0 135px;
+	width: 95%;
+}
+
+#homepage .photobar.title.navbar-scroll .inner {
+	padding-bottom: 80px; /* 135px - height of navbar */
+}
+
+#homepage .photobar.title.navbar-bottom #navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+
+#homepage .photobar.title {
+	background-image: url(/images/cwta-015.jpg);
+}
+
+#homepage .photobar.about {
+	background-image: url(/images/cwta-021.jpg);
+}
+
+#homepage .photobar.news {
+	background-image: url(/images/cwta-002.jpg);
+}
+ 
+#homepage .photobar.czl {
+	background-image: url(/images/cwta-020.jpg);
+}
+
+#homepage .photobar.contact {
+	background-image: url(/images/seattle-night.jpg);
+}
+
+
+#homepage #largelogo {
+	opacity: 0.70;
+}
+#homepage #largelogo h1 {
+	opacity: 1.0;
+}
+
+
+#homepage #largelogo {
+	margin-top: 250px;
+	opacity: 0.70;
+	padding-left: 190px;
+}
+
+
+#homepage #largelogo img {
+	float: left;
+	height: 130px;
+}
+
+#homepage #largelogo h1 {
+	text-transform: uppercase;
+	margin: 0 0 0 373px;  /* 373px is the width of the logo */
+	padding: 12px 15px;
+	height: 106px; /* 130px - 12px - 12px */
+
+}
+
+
+
+#homepage .photobar.title .inner .blurb {
+	width: auto;
+	margin-left: 563px;   /* large logo padding-left + logo width */
+	padding: 1.4em 1.2em;
+	font-weight: 300;
+}
+
+#homepage .photobar.title .inner .blurb p {
+	font-size: 16px;
+}
