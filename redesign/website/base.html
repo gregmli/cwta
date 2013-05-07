@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>{% block title %}Chinese Wushu &amp; Taichi Academy{% endblock %}</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+
+<script type="text/javascript" src="//use.typekit.net/shh7fgo.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+{% endblock %}
+
+</head>
+<body id="{% block pageId %}{% endblock %}">
+{% block contentHeader %}
+<div class="navbar-top">
+	{% block navbar %}
+	<div id="navbar">
+	<ul>
+		<li id="sitelogo"><a href="/"><img src="images/logo.png" alt="Chinese Wushu<br/>&amp; Taichi Academy"/></a></li>
+		<li><a href="/classes">Classes</a></li>
+		<li><a href="/instructors">Instructors</a></li>
+		<li><a href="/chen">Chen Taichi</a></li>
+		<li><a href="/yang">Yang Taichi</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+	</div>
+	{% endblock %}s
+</div>
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+{% block contentFooter %}
+
+<div class="photobar contact">
+	<div class="inner">
+		<h2><a name="contact">Located in </a><br/><strong><em>Seattle</em><br/> International<br/>District</strong></h2>
+		<div class="location">
+			<div class="address">
+			709 &frac12; S. King Street<br/>
+			Seattle, WA 98104
+			</div>
+			
+			<div id="phone">206-749-9513</div>
+			<div id="email"><a href="mailto:yijiao@chinesewushitaichi.com">yijiao@chinesewushitaichi.com</a></div>
+			
+			<div class="map">
+				<a href="http://goo.gl/maps/iecyi" target="_blank"><img src="images/map.png" alt="709 &frac12; S. King Street, Seattle, WA 98104"/></a>
+			</div>
+		</div>
+		
+		<div class="breaker">&nbsp;</div>
+	</div>
+</div>
+
+
+{% endblock %}
+{% block htmlFooter %}
+
+<script src="/scripts/jquery-1.9.1.js"></script>
+<script src="/scripts/cwta.js"></script>
+
+
+{% endblock %}
+
+</body>
+</html>
+

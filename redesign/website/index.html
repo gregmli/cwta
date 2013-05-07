@@ -1,17 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% extends "base.html" %}
 
-<html>
-<head>
-<title>Chinese Wushu &amp; Taichi Academy</title>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+{% block title %}Chinese Wushu &amp; Taichi Academy{% endblock %}
 
-<script type="text/javascript" src="//use.typekit.net/shh7fgo.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+{% block pageId %}homepage{% endblock %}
 
-</head>
-<body id="homepage">
-
+{% block contentHeader %}
 <div class="photobar title navbar-top">
 	<div class="inner">
 		<div id="largelogo">
@@ -30,18 +23,11 @@
 		and corporations.
 		</p></div>
 	</div>
-	<div id="navbar">
-	<ul>
-		<li id="sitelogo"><a href="/"><img src="images/logo.png" alt="Chinese Wushu<br/>&amp; Taichi Academy"/></a></li>
-		<li><a href="/schedule">Class Schedule</a></li>
-		<li><a href="/chen">Chen Taichi</a></li>
-		<li><a href="/yang">Yang Taichi</a></li>
-		<li><a href="/about">About</a></li>
-	</ul>
-	</div>
+	{% block navbar %}{{ super() }}{% endblock %}
 </div>
+{% endblock %}
 
-
+{% block content %}
 <div class="photobar about">
 	<div class="inner">
 		<h2><span>Master Yijiao Hong</span></h2>
@@ -56,13 +42,13 @@
 		<p>Master Hong currently offers classes for <a href="/chen">Chen 
 		Taichi</a> and <a href="/yang">Yang Taichi</a>.</p>
 		
-		<p>› <a href="/schedule">View Current Class Schedule</a></p>
+		<p>&rsaquo; <a href="/classes">View Current Class Schedule</a></p>
 		</div>
 	</div>
 </div>
 <div class="solidbar" id="about">
 	<div class="primary">
-		<p>Born in Jin Hua, China, Master Hong started practicing 
+		<p><span class="initial-first-word">Born</span> in Jin Hua, China, Master Hong started practicing 
 		Wushu with the Jin Hua Wu Shu Team when she was 8 years old. 
 		She was the top Wushu athlete and Taichi champion in Zhe 
 		Jiang province, China. Master Hong has a B.A. degree in 
@@ -86,23 +72,23 @@
 		and 2003, she judged for selection of National Wushu Teams 
 		for both the U. S. A. and Canada.</p>
 	
-		<p>Master Hong’s passion in Tai Chi originated from her 
+		<p>Master Hong's passion in Tai Chi originated from her 
 		late teenage years at University, especially after she 
 		studied Chinese Medicine for two years and visited Madam 
-		Chen Lixing in Xian, China Master Hong’s strong belief in 
-		Tai Chi’s therapeutic value in life and Tai Chi’s powerful 
+		Chen Lixing in Xian, China Master Hong's strong belief in 
+		Tai Chi's therapeutic value in life and Tai Chi's powerful 
 		martial application is a constant source of inspiration for 
 		her. Master Hong is a lifetime student of Tai Chi Yang 
 		family from Grandmaster Fu Shengyuang and Chen family from 
 		Grandmaster Chen Zhenglei, Chen village, China.</p>
 	
 		<p>Currently, Master Hong is focusing her teaching on Taichi. 
-		In addition, she practices Guzheng – ancient strings, and 
+		In addition, she practices Guzheng &mdash; ancient strings, and 
 		spends time with her two young children. Her former wushu 
 		students are continuing their practice of Wushu at the Seattle 
 		Wushu Center, UW Husky Wushu Team, and Northwest Wushu.</p>
 	
-		<p>Read more <a href="/about">about Master Hong</a></p>
+		<p>Read more <a href="/instructors">about Master Hong</a></p>
 	</div>
 		
 	<div class="secondary">
@@ -146,7 +132,7 @@
 		<p class="testimonee">&mdash; Mike McAlister</p>
 		</div>
 		
-		<p class="more">Read more <a href="/about#testimonials">Student Testimonials</a></p>
+		<p class="more">Read more <a href="/instructors#student_testimonials">Student Testimonials</a></p>
 		
 	</div>
 	
@@ -194,70 +180,25 @@
 
 </div>
 
-<div class="photobar contact">
-	<div class="inner">
-		<h2>Located in <br/><strong><em>Seattle</em><br/> International<br/>District</strong></h2>
-		<div class="location">
-			<div class="address">
-			709 &frac12; S. King Street<br/>
-			Seattle, WA 98104
-			</div>
-			
-			<div id="phone">206-749-9513</div>
-			<div id="email"><a href="mailto:yijiao@chinesewushitaichi.com">yijiao@chinesewushitaichi.com</a></div>
-			
-			<div class="map">
-				<a href="http://goo.gl/maps/iecyi" target="_blank"><img src="images/map.png" alt="709 &frac12; S. King Street, Seattle, WA 98104"/></a>
-			</div>
-		</div>
-		
-		<div class="breaker">&nbsp;</div>
-	</div>
-</div>
+{% endblock %}
 
+{% block htmlFooter %}
 
-<script src="/scripts/jquery-1.9.1.js"></script>
+{{ super() }}
 
 <script>
-
-
-function updateNavbar() {
-	var viewTop = $(window).scrollTop()
-    var viewBottom =  viewTop + $(window).height();
-
-    var elemBottom = $('.photobar.title').offset().top + $('.photobar.title').height();
-    var elemTop = elemBottom - $('#navbar').height();
-	
-    $('.photobar.title').toggleClass('navbar-bottom', viewBottom < elemBottom);
-    $('.photobar.title').toggleClass('navbar-scroll', viewTop <= elemTop && elemBottom <= viewBottom);
-    $('.photobar.title').toggleClass('navbar-top', elemTop < viewTop);
-    
-}
-
-
-function updateMap() {
-	var map = $('.photobar.contact .location .map'); 
-	var mapImg = $('.photobar.contact .location .map img');
-	
-	var leftPos = -(mapImg.width()/2 - map.width()/2);
-	var topPos = -(mapImg.height()/2 - map.height()/2);
-	
-	// doesn't work if image isn't loaded.. arg..
-	alert(leftPos +", "+ topPos);
-	
-	mapImg.css({left: leftPos, top:topPos});
-}
 
 $(window).scroll(function () {
 	updateNavbar();
 });
 
+$(window).resize(function () {
+	updateNavbar();
+});
+
+
 updateNavbar();
 
 </script>
 
-</body>
-
-
-</html>
-
+{% endblock %}

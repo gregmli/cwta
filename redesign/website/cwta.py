@@ -7,8 +7,8 @@ import jinja2
 import os
 import urllib
 
-
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+
 
 def urlencode_filter(s):
     if type(s) == 'Markup':
@@ -19,24 +19,22 @@ def urlencode_filter(s):
 
 jinja_environment.filters['urlencode'] = urlencode_filter
 
-class HomePage(webapp2.RequestHandler):
     
+        
+class CwtaPage(webapp2.RequestHandler):    
+    def get(self, page):        
+        template = jinja_environment.get_template(page + '.html')
+        self.response.out.write(template.render())
+        
+
+class HomePage(CwtaPage):
     def get(self):
-        user = users.get_current_user()
+        super(HomePage,self).get('index')
+        
+        
 
-        if user is None:            
-            self.redirect(users.create_login_url(self.request.uri))
-           
-        else:
-            template = jinja_environment.get_template('index.html')
-            self.response.out.write(template.render(users=users))
-            
- 
-
-
-            
-            
-
-app = webapp2.WSGIApplication([('/', HomePage)], 
+app = webapp2.WSGIApplication([('/', HomePage),
+                               ('/(classes|instructors|chen|yang)(?i)', CwtaPage)
+                              ],
                               debug=True)
 
