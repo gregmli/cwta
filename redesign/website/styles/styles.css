@@ -282,7 +282,7 @@ p.byline {
 }
 
 .primary p .initial-first-word {
-	font-size: 4.4em;
+	font-size: 4.2em;
 	font-weight: 300;
 	display: block;
 	float: left;
@@ -322,6 +322,12 @@ p.byline {
 	margin-left: 250px;
 	padding: em 1.2em;
 	
+}
+
+.skinnylist {
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
 }
 
 
@@ -645,9 +651,25 @@ p.byline {
 }
 
 
-.skinnylist {
-	
-	column-count: 2;
-	-webkit-column-count: 2;
-	-moz-column-count: 2;
+
+
+/************************************************************************************\
+ 
+ yang
+ 
+\************************************************************************************/
+
+
+
+#yangtaichi .photobar.history {
+	background-image: url(/images/inforest.jpg);
 }
+
+#yangtaichi .photobar.history .inner {
+	padding: 150px 0; 
+}
+
+#yangtaichi .photobar.resources {
+	background-image: url(/images/cwta-011.jpg);
+}
+
