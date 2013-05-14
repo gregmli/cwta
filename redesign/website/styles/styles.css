@@ -249,32 +249,40 @@ p.byline {
 .photobar.contact .location {
 	background-color: #fff;
 	background-color: rgba(255,255,255,0.9);
-	float: left;
-	width: 360px;
+	margin-left: 350px;
 	padding: 30px;
+}
+
+.photobar.contact .location .data {
+	/* clear the address and contactInfo div so the map doesn't overlap */
+	overflow: hidden;
 }
 
 .photobar.contact .location a {
 	color: #004B91;
 }
 
+.photobar.contact .location .address,
+.photobar.contact .location .contactInfo {
+	float: left;
+}
+
 .photobar.contact .location .address {
 	margin-bottom: 1.2em;
+	width: 12em;
 }
 
 .photobar.contact .location .map {
 	margin-top: 1.8em;
-	width: 300px;
-	height: 200px;
-	overflow: hidden;
 	border: 1px solid #666;
 }
 
-.photobar.contact .location .map img {
-	/* -(img_dimension/2 - box_dimension/2) */
-	position: relative;
-	left: -141px;
-	top: -198px;
+.photobar.contact .location .map a {
+	display: block;
+	height: 250px;
+	background-image: url("/images/map.png");
+	background-position: center center;
+	text-decoration: none;
 }
 
 .sidebar-content {
@@ -324,10 +332,28 @@ p.byline {
 	
 }
 
+.solidbar ol li {
+	margin: 0 0 1em;
+}
+
+.solidbar ol ol li {
+	margin-bottom: 0.6em;
+}
+
 .skinnylist {
 	column-count: 2;
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
+}
+
+
+.testimonial p {
+	margin-bottom: 0.6em;
+}
+
+.testimonial p.by {
+	margin: 0 0 2em 60%;
+	font-style:italic;
 }
 
 
@@ -367,7 +393,7 @@ p.byline {
 }
  
 #homepage .photobar.czl {
-	background-image: url(/images/cwta-020.jpg);
+	background-image: url(/images/czl-seminar-collage.jpg);
 }
 
 
@@ -413,7 +439,92 @@ p.byline {
 	font-size: 16px;
 }
 
+#homepage #czl .class {
+	margin: 2.5em 0 ;
+}
 
+#homepage #czl .class h4 {
+	margin: 0 0 0 75px;
+}
+
+#homepage #czl .class h4 .cost {
+	float: right;
+	margin-left: 1em;
+	color: #666;
+	font-weight: normal;
+}
+
+#homepage #czl .class .datetime {
+	color: #666;
+}
+
+#homepage #czl .class .datetime .date {
+	line-height: normal;
+	float: left;
+	width: 65px;
+	text-align: center;
+	border: 1px solid #aaa;
+	padding: 2px;
+	margin-top: -2.2em;
+}
+
+#homepage #czl .class .datetime .day {
+	text-transform: uppercase;
+	font-size: 0.6em;
+	display: block;
+	background-color: #c00;
+	color: #fff;
+	padding: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+#homepage #czl .class .datetime .month {
+	display: block;
+	font-size: 0.8em;
+}
+
+#homepage #czl .class .datetime .mdate {
+	display: block;
+	font-size: 2em;
+	color: #000;
+	margin-top: -0.2em;
+	font-weight: 300;
+}
+
+#homepage #czl .class .datetime .time {
+	margin-left: 10px;
+}
+
+
+#homepage #czl .class .description {
+	clear: left;
+}
+
+#homepage #czl .class .description p {
+	margin-bottom: 0.6em;
+}
+
+#homepage #czl .class .location {
+	font-size: 0.9em;
+	line-height: normal;
+}
+
+#homepage #czl #locationInfo .map a {
+	display: block;
+	border: 1px solid #333;
+	height: 200px;
+	background-position: center center;
+	margin-bottom: 2em;
+	text-decoration: none;
+}
+
+#homepage #czl #locationInfo #thursdayClass .map a {
+	background-image: url("/images/seminar-loc-cwta.png");
+}
+
+#homepage #czl #locationInfo #otherClasses .map a {
+	background-image: url("/images/seminar-loc-ccc.png");
+}
 
 
 /************************************************************************************\
@@ -461,7 +572,7 @@ p.byline {
 	padding: 0;
 	width: auto;
 	background-color: #fdefe6;
-	height: 200px;
+	height: 13em;
 }
 
 #schedule .week li .dayname {
@@ -484,7 +595,7 @@ p.byline {
 }
 
 #schedule .class {
-	margin: 1em 0 2em;
+	margin: 1em 0 1.5em;
 }
 
 #schedule .class h4 {
@@ -499,6 +610,10 @@ p.byline {
 	margin: 0.1em 0 0.2em;
 }
 
+#schedule .class .instructors {
+	margin: 0.4em 0 0.8em;
+}
+
 #schedule .class .instructors em {
 	font-style: normal;
 }
@@ -509,7 +624,7 @@ p.byline {
 }
 
 #schedule .class .tuition {
-	margin: 0;
+	margin: 0 0 1em;
 	line-height: 100%;
 }
 
@@ -586,6 +701,7 @@ p.byline {
 	column-count: 2;
 	column-gap: 60px;
 }
+
 
 #instructors .instructor img {
 	float: left;
