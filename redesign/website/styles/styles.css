@@ -439,12 +439,21 @@ p.byline {
 	font-size: 16px;
 }
 
-#homepage #czl .class {
+
+#homepage .class {
 	margin: 2.5em 0 ;
 }
 
+#homepage .class h4 {
+	margin: 0;
+}
+
+#homepage .class .time {
+	line-height: normal;
+}
+
 #homepage #czl .class h4 {
-	margin: 0 0 0 75px;
+	margin-left: 75px;
 }
 
 #homepage #czl .class h4 .cost {
