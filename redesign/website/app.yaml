@@ -1,5 +1,5 @@
 application: yijiaowushu-hrd
-version: 2013-02-20
+version: 2013-08-25
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -20,9 +20,6 @@ handlers:
 
 - url: /images
   static_dir: images
-
-- url: /parallax
-  static_dir: parallax
 
 - url: /.*
   script: cwta.app
