@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>{% block title %}Chinese Wushu &amp; Taichi Academy{% endblock %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+body,td,th {
+	font-family: myriad-pro, helvetica, arial;
+}
+</style>
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+
+<script type="text/javascript" src="/scripts/typekit-modified.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40974456-1', 'chinesewushutaichi.com');
+  ga('send', 'pageview');
+
+</script>
+
+{% endblock %}
+
+</head>
+<body id="{% block pageId %}{% endblock %}">
+{% block contentHeader %}
+<div class="navbar-top">
+	{% block navbar %}
+	<div id="navbar">
+	<ul>
+		<li id="sitelogo"><a href="/"><img src="images/logo.png" alt="Chinese Wushu<br/>&amp; Taichi Academy"/></a></li>
+		<li><a href="/classes">Classes</a></li>
+		<li><a href="/instructors">Instructors</a></li>
+		<li><a href="/chen">Chen Taichi</a></li>
+		<li><a href="/yang">Yang Taichi</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+	</div>
+	{% endblock %}s
+</div>
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+{% block contentFooter %}
+
+<div class="photobar contact">
+	<div class="inner">
+		<h2><a name="contact">Located in </a><br/><strong><em>Seattle</em><br/> International<br/>District</strong></h2>
+		<div class="location">
+        	<div class="data">
+                <div class="address">
+                709 &frac12; S. King Street<br/>
+                Seattle, WA 98104
+                </div>
+                
+                <div class="contactInfo">
+                    <div id="phone">206-749-9513</div>
+                    <div id="email"><a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a></div>
+                </div>
+            </div>
+            
+			<div class="map">
+				<a href="http://goo.gl/maps/iecyi" target="_blank" title="709 &frac12; S. King Street, Seattle, WA 98104"/>&nbsp;</a>
+			</div>
+		</div>
+		
+		<div class="breaker">&nbsp;</div>
+	</div>
+</div>
+
+
+{% endblock %}
+{% block htmlFooter %}
+
+<script src="/scripts/jquery-1.9.1.js"></script>
+<script src="/scripts/cwta.js"></script>
+
+
+{% endblock %}
+
+</body>
+</html>
+

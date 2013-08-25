@@ -1,0 +1,800 @@
+/************************************************************************************\
+ 
+ common tags
+ 
+\************************************************************************************/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	
+	font-family: "myriad-pro", helvetica, arial;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "myriad-pro-condensed", helvetica, arial;
+	font-weight: bold;	
+}
+
+h1 {
+	font-size: 44px;
+	line-height: 1.2em;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 36px;	
+}
+
+h3 {
+
+}
+
+h4 {
+	font-size: 18px;
+}
+
+p {
+	line-height: 1.5em;
+	margin: 0.2em 0 1em;
+}
+
+a img {
+	border: 0 none;
+}
+
+
+/************************************************************************************\
+ 
+ global styles
+ 
+\************************************************************************************/
+
+
+.photobar {
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+	width: 100%;
+}
+
+.photobar .inner {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	padding: 80px 0;
+}
+
+
+.solidbar {
+	background-color: #fff;
+	padding: 40px 60px 4em;
+	line-height: 150%;
+}
+
+.solidbar .primary {
+	width: 55%;
+	float: left;
+}
+
+.solidbar .secondary {
+	width: 35%;
+	float: left;
+	font-size: 0.9em;
+	font-weight: 300;
+	margin-left: 10%;
+	color: #444;
+}
+
+.breaker {
+	clear: both;
+	font-size: 1px;
+	height: 1px;
+}
+
+.warning { 
+	color: #d00;
+}
+
+p.byline {
+	font-style: italic;
+	margin: 0 0 1.5em;
+	
+}
+
+.solidbar h3 {
+	margin: 1.5em 0 0.6em;
+	font-size: 1.6em;
+}
+
+.solidbar h3:first-child {
+	margin-top: 0;
+}
+
+#navbar {
+	background-color: #000;	
+	opacity: 0.80;
+}
+
+.navbar-top #navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	opacity: 1;
+}
+
+#navbar ul {
+	margin: 0;
+	padding: 0;
+	height: 55px;
+}
+
+#navbar li {
+	list-style-type: none;
+
+	margin: 0;
+	padding: 0 1.5em;
+	font-family: futura-pt;
+	font-weight: 300;
+	font-size: 11pt;
+	text-transform: uppercase;
+	border-left: 1px solid #666;
+	display: block;
+	height: 55px;
+	float: left;
+	line-height: 55px;
+}
+
+#navbar li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#navbar li#sitelogo {
+	margin-top: -15px;
+	padding: 0 20px 0 5px;
+	height: 55px;
+	overflow: visible;
+}
+
+#navbar li#sitelogo img {
+	vertical-align: 80px;
+}
+
+
+#homepage .photobar .inner h1, .photobar .inner h1 span, .photobar .inner h2 span, .photobar .inner .blurb {
+	background-color: #000;
+	color: #fff;
+	opacity: 0.70;
+}
+
+.photobar .inner h2 {
+	margin: 0;
+	padding: 0;
+}
+
+.photobar .inner h1 span, .photobar .inner h2 span {
+	display: inline-block;
+	padding: 20px 30px;
+	margin: 0.2em 0 0;
+}
+
+.photobar .inner .blurb {
+	padding: 20px 30px;
+}
+
+.photobar .inner a {
+	color: #fff;
+}
+
+
+.photobar .blurb {
+	width: 360px;
+	margin-top: 1em;
+	font-weight: 300;
+}
+
+.photobar .blurb p {
+	font-size: 14px;
+}
+
+
+.photobar.contact {
+	background-image: url(/images/seattle-night.jpg);
+}
+
+.publication {
+	margin-bottom: 1.5em;
+}
+
+.publication h4 {
+	font-size: 1.1em;
+	margin: 0;
+}
+
+.publication p {
+	margin: 0 0 0.4em;
+}
+
+.photobar.contact h2 {
+	font-size: 2em;
+	color: #fff;
+	float: left;
+	width: 12em;
+	margin-top: 1em;
+}
+
+.photobar.contact h2 strong {
+	font-size: 1.4em;
+	line-height: 1.1em;
+}
+.photobar.contact h2 strong em {
+	line-height: 1.2em;
+	font-size: 1.8em;
+	font-style: normal;
+}
+
+.photobar.contact .location {
+	background-color: #fff;
+	background-color: rgba(255,255,255,0.9);
+	margin-left: 350px;
+	padding: 30px;
+}
+
+.photobar.contact .location .data {
+	/* clear the address and contactInfo div so the map doesn't overlap */
+	overflow: hidden;
+}
+
+.photobar.contact .location a {
+	color: #004B91;
+}
+
+.photobar.contact .location .address,
+.photobar.contact .location .contactInfo {
+	float: left;
+}
+
+.photobar.contact .location .address {
+	margin-bottom: 1.2em;
+	width: 12em;
+}
+
+.photobar.contact .location .map {
+	margin-top: 1.8em;
+	border: 1px solid #666;
+}
+
+.photobar.contact .location .map a {
+	display: block;
+	height: 250px;
+	background-image: url("/images/map.png");
+	background-position: center center;
+	text-decoration: none;
+}
+
+.sidebar-content {
+	margin-bottom: 4em;
+}
+
+.primary p .initial-first-word {
+	font-size: 4.2em;
+	font-weight: 300;
+	display: block;
+	float: left;
+	margin: 0.05em;
+	margin-left: -0.05em;
+}
+
+.resource-list .ui-tabs-nav {
+	float: left;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+}
+
+.resource-list .ui-tabs-nav li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0.4em 1em;
+	border-left: 6px solid #fff;
+}
+
+.resource-list .ui-tabs-nav li a {
+	text-decoration: none;
+	color: #666;
+}
+
+.resource-list .ui-tabs-nav li.ui-tabs-active {
+	border-left: 6px solid #aaa;
+}
+
+.resource-list .ui-tabs-nav li.ui-tabs-active a {
+	color: #222;
+	font-weight: bold;
+}
+
+.resource-list .ui-tabs-panel {
+	margin-left: 250px;
+	padding: em 1.2em;
+	
+}
+
+.solidbar ol li {
+	margin: 0 0 1em;
+}
+
+.solidbar ol ol li {
+	margin-bottom: 0.6em;
+}
+
+.skinnylist {
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+}
+
+
+.testimonial p {
+	margin-bottom: 0.6em;
+}
+
+.testimonial p.by {
+	margin: 0 0 2em 60%;
+	font-style:italic;
+}
+
+
+/************************************************************************************\
+ 
+ homepage
+ 
+\************************************************************************************/
+
+#homepage .photobar.title .inner {
+	padding: 20px 0 135px;
+	width: 95%;
+}
+
+#homepage .photobar.title.navbar-scroll .inner {
+	padding-bottom: 80px; /* 135px - height of navbar */
+}
+
+#homepage .photobar.title.navbar-bottom #navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+
+#homepage .photobar.title {
+	background-image: url(/images/cwta-015.jpg);
+}
+
+#homepage .photobar.about {
+	background-image: url(/images/cwta-021.jpg);
+}
+
+#homepage .photobar.news {
+	background-image: url(/images/cwta-002.jpg);
+}
+ 
+#homepage .photobar.czl {
+	background-image: url(/images/czl-seminar-collage.jpg);
+}
+
+
+
+
+#homepage #largelogo {
+	opacity: 0.70;
+}
+#homepage #largelogo h1 {
+	opacity: 1.0;
+}
+
+
+#homepage #largelogo {
+	margin-top: 250px;
+	opacity: 0.70;
+	padding-left: 190px;
+}
+
+
+#homepage #largelogo img {
+	float: left;
+	height: 130px;
+}
+
+#homepage #largelogo h1 {
+	margin: 0 0 0 373px;  /* 373px is the width of the logo */
+	padding: 12px 15px;
+	height: 130px;
+
+}
+
+
+
+#homepage .photobar.title .inner .blurb {
+	width: auto;
+	margin-left: 563px;   /* large logo padding-left + logo width */
+	padding: 1.4em 1.2em;
+	font-weight: 300;
+}
+
+#homepage .photobar.title .inner .blurb p {
+	font-size: 16px;
+}
+
+
+#homepage .class {
+	margin: 2.5em 0 ;
+}
+
+#homepage .class h4 {
+	margin: 0;
+}
+
+#homepage .class .time {
+	line-height: normal;
+}
+
+#homepage #czl .class h4 {
+	margin-left: 75px;
+}
+
+#homepage #czl .class h4 .cost {
+	float: right;
+	margin-left: 1em;
+	color: #666;
+	font-weight: normal;
+}
+
+#homepage #czl .class .datetime {
+	color: #666;
+}
+
+#homepage #czl .class .datetime .date {
+	line-height: normal;
+	float: left;
+	width: 65px;
+	text-align: center;
+	border: 1px solid #aaa;
+	padding: 2px;
+	margin-top: -2.2em;
+}
+
+#homepage #czl .class .datetime .day {
+	text-transform: uppercase;
+	font-size: 0.6em;
+	display: block;
+	background-color: #c00;
+	color: #fff;
+	padding: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+#homepage #czl .class .datetime .month {
+	display: block;
+	font-size: 0.8em;
+}
+
+#homepage #czl .class .datetime .mdate {
+	display: block;
+	font-size: 2em;
+	color: #000;
+	margin-top: -0.2em;
+	font-weight: 300;
+}
+
+#homepage #czl .class .datetime .time {
+	margin-left: 10px;
+}
+
+
+#homepage #czl .class .description {
+	clear: left;
+}
+
+#homepage #czl .class .description p {
+	margin-bottom: 0.6em;
+}
+
+#homepage #czl .class .location {
+	font-size: 0.9em;
+	line-height: normal;
+}
+
+#homepage #czl #locationInfo .map a {
+	display: block;
+	border: 1px solid #333;
+	height: 200px;
+	background-position: center center;
+	margin-bottom: 2em;
+	text-decoration: none;
+}
+
+#homepage #czl #locationInfo #thursdayClass .map a {
+	background-image: url("/images/seminar-loc-cwta.png");
+}
+
+#homepage #czl #locationInfo #otherClasses .map a {
+	background-image: url("/images/seminar-loc-ccc.png");
+}
+
+
+/************************************************************************************\
+ 
+ schedule
+ 
+\************************************************************************************/
+
+#schedule .photobar.schedule {
+	background-image: url(/images/cwta-007.jpg);
+}
+
+
+#schedule .photobar.private-lessons {
+	background-image: url(/images/private-lessons.jpg);
+}
+
+
+#schedule .photobar.schedule .inner {
+	padding-bottom: 40px;
+}
+
+#schedule .week {
+	list-style-type: none;
+	margin: 0;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	
+	opacity: 0.9;
+}
+
+#schedule .week li {
+	list-style-type: none;
+	margin: 0 0 6em;
+	padding: 0 0 0 3px;
+	display: block;
+	float: left;
+	width: 14.28%;
+}
+
+#schedule .week li .inner {
+	margin: 0;
+	padding: 0;
+	width: auto;
+	background-color: #fdefe6;
+	height: 13em;
+}
+
+#schedule .week li .dayname {
+	background-color: #e6ccbf;
+	font-size: 1.4em;
+	height: 35px;
+	line-height: 35px;
+	font-family: "myriad-pro-condensed", helvetica, arial;
+	font-weight: bold;
+	text-align: center;
+}
+
+#schedule .week li .event {
+	padding: 0.6em 6px 1em;
+	font-size: 0.9em;
+}
+
+#schedule .week li .event .time {
+	font-weight: bold;
+}
+
+#schedule .class {
+	margin: 1em 0 1.5em;
+}
+
+#schedule .class h4 {
+	margin: 0;
+}
+
+#schedule .class .instructors,
+#schedule .class .time {
+	font-size: 15px;
+	font-style: italic;
+	line-height: 100%;
+	margin: 0.1em 0 0.2em;
+}
+
+#schedule .class .instructors {
+	margin: 0.4em 0 0.8em;
+}
+
+#schedule .class .instructors em {
+	font-style: normal;
+}
+
+#schedule .class .description p {
+	line-height: 125%;
+	margin: 0.2em 0 0.4em;
+}
+
+#schedule .class .tuition {
+	margin: 0 0 1em;
+	line-height: 100%;
+}
+
+#schedule .registration strong {
+	font-size: 1.2em;
+}
+
+#schedule .secondary h3 {
+	margin-bottom: 0.4em;
+}
+
+#schedule .secondary ul {
+	margin: 0;
+	padding: 0;
+}
+
+#schedule .secondary li {
+	margin: 0 0 0.8em;
+	padding: 0;
+	list-style-type: none;
+	line-height: 100%;
+}
+
+
+/************************************************************************************\
+ 
+ instructors
+ 
+\************************************************************************************/
+
+#instructors .photobar.shifu {
+	background-image: url(/images/cwta-025_028.jpg);
+}
+
+#instructors .photobar.testimonials {
+	background-image: url(/images/taichi-class-1.jpg);
+}
+
+#instructors .photobar.assistants {
+	background-image: url(/images/cwta-022.jpg);
+}
+
+#instructors .photobar.about {
+	background-image: url(/images/cwta-006.jpg);
+}
+
+#instructors .photobar.shifu .inner {
+	padding-bottom: 250px; 
+	
+}
+
+#instructors #shifu .primary h3 {
+	font-family: "myriad-pro", helvetica, arial;
+	font-weight: 300;
+	font-size: 60px;
+	margin-bottom: 8px;
+	line-height: 100%;
+}
+
+#instructors #shifu .secondary {
+	padding-top: 68px;
+}
+
+#instructors .instructor {
+	clear: left;
+	margin: 0 0 3em;
+}
+
+#instructors #testimonials .inner {
+	-webkit-column-count: 2;
+	-webkit-column-gap: 60px;
+	-moz-column-count: 2;
+	-moz-column-gap: 60px;
+	column-count: 2;
+	column-gap: 60px;
+}
+
+
+#instructors .instructor img {
+	float: left;
+}
+
+
+#instructors .instructor h4 {
+	margin: 0 0 0.4em 220px;
+}
+#instructors .instructor p {
+	margin: 0 0 0 220px;
+}
+
+
+
+/************************************************************************************\
+ 
+ chen
+ 
+\************************************************************************************/
+
+
+
+#chentaichi .photobar.history {
+	background-image: url(/images/cwta-019.jpg);
+}
+
+#chentaichi .photobar.history .inner {
+	padding: 150px 0; 
+}
+
+
+#chentaichi .photobar.resources {
+	background-image: url(/images/cwta-001.jpg);
+}
+
+#chentaichi #tab-mastering p.byline {
+	margin: 0 0 1em;
+}
+
+#chentaichi #tab-mastering h3 {
+	margin-bottom: 0.2em;
+}
+
+#chentaichi #tab-mastering p {
+	margin: 0.4em 0 0.2em;
+}
+
+#chentaichi #tab-mastering ol {
+	margin-top: 0.2em;
+	margin-bottom: 0.8em;
+}
+
+#chentaichi #tab-practice dt {
+	break: left;
+	float: left;
+	font-weight: normal;
+	margin-right: 0.5em;
+}
+
+#chentaichi #tab-practice dd {
+	font-style: italic;
+}
+
+
+
+
+/************************************************************************************\
+ 
+ yang
+ 
+\************************************************************************************/
+
+
+
+#yangtaichi .photobar.history {
+	background-image: url(/images/inforest.jpg);
+}
+
+#yangtaichi .photobar.history .inner {
+	padding: 150px 0; 
+}
+
+#yangtaichi .photobar.resources {
+	background-image: url(/images/cwta-011.jpg);
+}
+
