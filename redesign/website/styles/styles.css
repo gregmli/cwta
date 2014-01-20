@@ -456,20 +456,35 @@ p.byline {
 
 #homepage .buyLinks li {
 	display: inline-block;
-	padding: 0.3em 0.8em;
-}
-
-#homepage .buyLinks li.callToAction {
-	font-weight: bold;
-	border-left: 0 none;
-	border-radius: 3px;
-	background-color: #3298da;
-	color: #fff;
+	margin-right: 0.6em;
+	vertical-align: middle;
 }
 
 #homepage .buyLinks li.callToAction a {
+	display: block;
+	padding: 0.3em 1.25em;
+
+	border-left: 0 none;
+	border-radius: 3px;
+	background-color: #3298da;
+
 	color: #fff;
 	text-decoration: none;
+	text-align: center;
+
+	line-height: normal;
+}
+
+#homepage .buyLinks li.callToAction a .price {
+	font-weight: bold;
+	display: block;
+
+}
+
+#homepage .buyLinks li.callToAction a .label {
+	display: block;
+	text-transform: uppercase;
+	font-size: 0.7em;
 }
 
 #homepage .trailer {
@@ -613,7 +628,7 @@ p.byline {
 	padding: 0;
 	width: auto;
 	background-color: #fdefe6;
-	height: 13em;
+	height: 19em;
 }
 
 #schedule .week li .dayname {
@@ -627,7 +642,7 @@ p.byline {
 }
 
 #schedule .week li .event {
-	padding: 0.6em 6px 1em;
+	padding: 0.6em 6px 0.6em;
 	font-size: 0.9em;
 }
 
