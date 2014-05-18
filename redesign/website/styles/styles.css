@@ -823,6 +823,10 @@ p.byline {
 }
 
 
+#chentaichi .resource-list {
+	margin-top: 4em;
+}
+
 
 
 /************************************************************************************\
@@ -844,4 +848,10 @@ p.byline {
 #yangtaichi .photobar.resources {
 	background-image: url(/images/cwta-011.jpg);
 }
+
+
+#yangtaichi .resource-list {
+	margin-top: 4em;
+}
+
 
