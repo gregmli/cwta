@@ -1,5 +1,5 @@
 application: yijiaowushu-hrd
-version: 2014-05-18
+version: 2014-11-23
 runtime: python27
 api_version: 1
 threadsafe: true
