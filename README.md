@@ -4,7 +4,6 @@ cwta
 Chinese Wushu &amp; Taichi Association Website
 
 ## Code Structure
-* **/cwta website** - the original website. Now defunct, ignore it
 * **/redesign/website** - the new, redesigned website. Pretty much all changes should be made here
 * **/redirector** - a small app for redirecting traffic from the old URL to the new one
 
