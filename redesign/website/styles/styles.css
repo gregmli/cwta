@@ -365,7 +365,9 @@ p.byline {
 
 #homepage .photobar.title .inner {
 	padding: 20px 0 0;
-	width: 100%;
+	width: 373px;
+	margin-right: 80px;
+	margin-left: auto;
 }
 
 #homepage .photobar.title.navbar-scroll .inner {
@@ -410,18 +412,17 @@ p.byline {
 }
 
 #homepage #largelogo {
-	margin-top: 80px;
-	padding-left: 190px;
+	margin-top: 2em;
+	
 }
 
 
 #homepage #largelogo img {
-	float: left;
 	height: 130px;
 }
 
 #homepage #largelogo h1 {
-	margin: 0 0 0 373px;  /* 373px is the width of the logo */
+	margin: 0;
 	padding: 12px 15px;
 	height: 130px;
 
@@ -430,8 +431,8 @@ p.byline {
 
 #homepage .photobar.title .inner .blurb {
 	width: auto;
-	margin-top: 330px;
-	padding: 1.4em 3em 3em;
+	margin: 4em 0 3em;
+	padding: 1.4em 2em;
 	font-weight: 300;
 }
 
