@@ -364,12 +364,12 @@ p.byline {
 \************************************************************************************/
 
 #homepage .photobar.title .inner {
-	padding: 20px 0 135px;
-	width: 95%;
+	padding: 20px 0 0;
+	width: 100%;
 }
 
 #homepage .photobar.title.navbar-scroll .inner {
-	padding-bottom: 80px; /* 135px - height of navbar */
+	padding-bottom: 0px;
 }
 
 #homepage .photobar.title.navbar-bottom #navbar {
@@ -381,11 +381,11 @@ p.byline {
 
 
 #homepage .photobar.title {
-	background-image: url(/images/cwta-015.jpg);
+	background-image: url(/images/cwta-class.jpg);
 }
 
 #homepage .photobar.about {
-	background-image: url(/images/cwta-021.jpg);
+	background-image: url(/images/cwta-015-reverse.jpg);
 }
 
 #homepage .photobar.news {
@@ -399,18 +399,18 @@ p.byline {
 
 
 
-
-#homepage #largelogo {
-	opacity: 0.70;
-}
 #homepage #largelogo h1 {
 	opacity: 1.0;
 }
 
 
+#homepage #largelogo,
+#homepage .photobar.title .inner .blurb {
+	opacity: 0.80;
+}
+
 #homepage #largelogo {
-	margin-top: 250px;
-	opacity: 0.70;
+	margin-top: 80px;
 	padding-left: 190px;
 }
 
@@ -428,11 +428,10 @@ p.byline {
 }
 
 
-
 #homepage .photobar.title .inner .blurb {
 	width: auto;
-	margin-left: 563px;   /* large logo padding-left + logo width */
-	padding: 1.4em 1.2em;
+	margin-top: 330px;
+	padding: 1.4em 3em 3em;
 	font-weight: 300;
 }
 
