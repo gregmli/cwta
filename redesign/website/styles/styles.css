@@ -499,32 +499,41 @@ p.byline {
 	line-height: normal;
 }
 
-#homepage #czl .class h4 {
-	margin-left: 75px;
+#homepage #czl .coverImage img {
+	width: 100%;
 }
 
-#homepage #czl .class h4 .cost {
-	float: right;
-	margin-left: 1em;
-	color: #666;
-	font-weight: normal;
+#homepage #czl dl {
+	font-size: 0.9em;
 }
 
-#homepage #czl .class .datetime {
-	color: #666;
+#homepage #czl dt {
+	width: 140px;
+	float: left;
+	font-weight: bold;
+	white-space: nowrap;
 }
 
-#homepage #czl .class .datetime .date {
+#homepage #czl dd {
+	margin-left: 150px;
+	margin-bottom: 0.4em;
+}
+
+
+#homepage #czl .day {
+	clear: left;
+}
+
+#homepage #czl .day .date {
 	line-height: normal;
 	float: left;
 	width: 65px;
 	text-align: center;
 	border: 1px solid #aaa;
 	padding: 2px;
-	margin-top: -2.2em;
 }
 
-#homepage #czl .class .datetime .day {
+#homepage #czl .day .date .day {
 	text-transform: uppercase;
 	font-size: 0.6em;
 	display: block;
@@ -534,12 +543,12 @@ p.byline {
 	margin-bottom: 0.2em;
 }
 
-#homepage #czl .class .datetime .month {
+#homepage #czl .day .date .month {
 	display: block;
 	font-size: 0.8em;
 }
 
-#homepage #czl .class .datetime .mdate {
+#homepage #czl .day .date .mdate {
 	display: block;
 	font-size: 2em;
 	color: #000;
@@ -547,22 +556,27 @@ p.byline {
 	font-weight: 300;
 }
 
-#homepage #czl .class .datetime .time {
-	margin-left: 10px;
+#homepage #czl .day .class {
+	margin-left: 75px;
+}
+
+#homepage #czl .day .class h4 .cost {
+	float: right;
+	margin-left: 1em;
+	color: #666;
+	font-weight: normal;
 }
 
 
-#homepage #czl .class .description {
-	clear: left;
-}
 
-#homepage #czl .class .description p {
+#homepage #czl .day .class .description p {
 	margin-bottom: 0.6em;
 }
 
-#homepage #czl .class .location {
+#homepage #czl .day .class .location {
 	font-size: 0.9em;
 	line-height: normal;
+	font-style: italic;
 }
 
 #homepage #czl #locationInfo .map a {

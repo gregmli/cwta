@@ -1,10 +1,10 @@
 application: yijiaowushu-hrd
-version: 2015-09-19
+version: 2015-11-22
 runtime: python27
 api_version: 1
 threadsafe: true
 
-  
+
 libraries:
 - name: jinja2
   version: latest
