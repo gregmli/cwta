@@ -23,6 +23,17 @@ h1, h2, h3, h4, h5 {
 	font-weight: bold;	
 }
 
+.subtitle {
+	font-family: "myriad-pro-condensed", helvetica, arial;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.subtitle .leader {
+	font-style: italic;
+	margin-right: 0.15em;
+}
+
 h1 {
 	font-size: 44px;
 	line-height: 1.2em;
@@ -593,10 +604,22 @@ p.byline {
 }
 
 
-
-#homepage #czl .sponsorInfo {
+#homepage #czl .sponsorInfo p,
+#homepage #czl .sponsorInfo li {
 	font-size: 0.9em;
-	color: #666;
+	
+}
+
+#homepage #czl .sponsorInfo p {
+	margin: 1.2em 0 0;
+	font-weight: bold;
+}
+
+#homepage #czl .sponsorInfo ul,
+#homepage #czl .sponsorInfo li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
 /************************************************************************************\
