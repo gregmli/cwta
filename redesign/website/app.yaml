@@ -23,3 +23,6 @@ handlers:
 
 - url: /.*
   script: cwta.app
+
+inbound_services:
+- warmup
