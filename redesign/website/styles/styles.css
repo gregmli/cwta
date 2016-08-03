@@ -711,6 +711,10 @@ p.byline {
 	margin: 0;
 }
 
+#schedule .class .description img {
+	width: 100%;
+}
+
 #schedule .class .instructors,
 #schedule .class .time {
 	font-size: 15px;
