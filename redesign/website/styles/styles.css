@@ -293,12 +293,12 @@ p.byline {
 }
 
 .photobar.contact .location .address {
-	margin-bottom: 1.2em;
+	margin-bottom: 1em;
 	width: 12em;
 }
 
 .photobar.contact .location .map {
-	margin-top: 1.8em;
+	margin-top: 0em;
 	border: 1px solid #666;
 }
 
@@ -308,6 +308,15 @@ p.byline {
 	background-image: url("/images/map.png");
 	background-position: center center;
 	text-decoration: none;
+}
+
+.photobar.contact .location .mercer-island .address {
+	float: none;
+	width: auto;
+}
+
+.photobar.contact .location h3 {
+	margin-bottom: 0;
 }
 
 .sidebar-content {
