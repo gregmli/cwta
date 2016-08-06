@@ -657,34 +657,25 @@ p.byline {
 }
 
 #schedule .week {
-	list-style-type: none;
 	margin: 0;
 	width: 98%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 6em;
 	padding: 0;
 	
 	opacity: 0.9;
 }
 
-#schedule .week li {
-	list-style-type: none;
-	margin: 0 0 6em;
-	padding: 0 0 0 3px;
-	display: block;
-	float: left;
+#schedule .week td {
+	margin: 0 2px;
+	padding: 0 0 1em;
 	width: 14.28%;
-}
-
-#schedule .week li .inner {
-	margin: 0;
-	padding: 0;
-	width: auto;
 	background-color: #fdefe6;
-	height: 22em;
+	vertical-align: top;
 }
 
-#schedule .week li .dayname {
+#schedule .week td .dayname {
 	background-color: #e6ccbf;
 	font-size: 1.4em;
 	height: 35px;
@@ -694,12 +685,12 @@ p.byline {
 	text-align: center;
 }
 
-#schedule .week li .event {
+#schedule .week .event {
 	padding: 0.6em 6px 0.6em;
 	font-size: 0.9em;
 }
 
-#schedule .week li .event .time {
+#schedule .week .event .time {
 	font-weight: bold;
 }
 
@@ -739,6 +730,10 @@ p.byline {
 #schedule .class .tuition {
 	margin: 0 0 1em;
 	line-height: 100%;
+}
+
+#schedule .quarter-schedule h4 {
+	margin-bottom: 0.5em;
 }
 
 #schedule .registration strong {
