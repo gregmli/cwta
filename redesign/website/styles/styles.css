@@ -645,6 +645,15 @@ p.byline {
 	list-style-type: none;
 }
 
+#homepage #news .registerNow p {
+	margin-bottom: 0;
+}
+
+#homepage #news ol, #homepage #news li {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
 /************************************************************************************\
  
  schedule
