@@ -939,6 +939,32 @@ p.byline {
 	
 }
 
+#czl2016 .intro {
+	width: ;
+}
+
+.programGuide {
+	display: inline-block;
+}
+.programGuide a {
+	display: block;
+}
+.programGuide img {
+	height: 100px;
+}
+
+.programGuide .thumbnail {
+	float: left;
+}
+
+.programGuide .caption {
+	font-weight: normal;
+}
+
+.programGuide .caption, .programGuide .fileInfo {
+	margin-left: 90px;
+}
+
 .articlethumb {
 	display: inline-block;
 	font-size: 0.9em;
