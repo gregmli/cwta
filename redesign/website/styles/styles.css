@@ -50,6 +50,11 @@ h3 {
 
 h4 {
 	font-size: 18px;
+	margin: 2em 0 1em;
+}
+
+h4 .byline {
+	font-weight: normal;
 }
 
 p {
@@ -427,7 +432,7 @@ p.byline {
 }
  
 #homepage .photobar.czl {
-	background-image: url(/images/czl-seminar-collage.jpg);
+	background-image: url(/images/czl_home_cover.jpg);
 	height: 300px;
 }
 
@@ -531,6 +536,48 @@ p.byline {
 
 #homepage #czl .coverImage img {
 	width: 100%;
+}
+
+
+#homepage #czl a.coverImage {
+	position: relative;
+	display: block;
+	border: 4px solid rgba(0,0,238,0.6);
+
+}
+
+
+#homepage #czl a.coverImage h3 {
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 2em;
+	top: 110px;
+	right: 10px;
+	margin: 0.5em auto;
+	padding: 0.5em 0.7em;
+
+	line-height: 110%;
+
+	color: #fff;
+	background-color: #00e;	
+	opacity: 0.6;
+}
+
+
+#homepage #czl a.coverImage:hover {
+	border: 4px solid #00e;	
+}
+
+#homepage #czl a.coverImage:hover img {
+	opacity: 0.5;
+}
+
+#homepage #czl a.coverImage:hover h3 {
+	opacity: 1.0;
+	z-index: 99;
 }
 
 #homepage #czl dl {
@@ -894,7 +941,7 @@ p.byline {
 
 
 #chentaichi .resource-list {
-	margin-top: 4em;
+	
 }
 
 
