@@ -203,6 +203,24 @@ p.byline {
 	vertical-align: 80px;
 }
 
+#navbar li.fb img {
+	vertical-align: -12%;
+}
+
+#navbar li.fb span {
+	display: none;
+}
+
+@media (min-width: 1110px) {
+	#navbar li.fb img {
+		margin-right: 5px;
+	}
+
+	#navbar li.fb span {
+		display: inline;
+	}
+}
+
 
 #homepage .photobar .inner h1, .photobar .inner h1 span, .photobar .inner h2 span, .photobar .inner .blurb {
 	background-color: #000;
