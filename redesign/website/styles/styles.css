@@ -1008,58 +1008,82 @@ p.byline {
 	width: ;
 }
 
-.programGuide {
+#czl2016 .programGuide {
 	display: inline-block;
 }
-.programGuide a {
+#czl2016 .programGuide a {
 	display: block;
 }
-.programGuide img {
+#czl2016 .programGuide img {
 	height: 100px;
 }
 
-.programGuide .thumbnail {
+#czl2016 .programGuide .thumbnail {
 	float: left;
 }
 
-.programGuide .caption {
+#czl2016 .programGuide .caption {
 	font-weight: normal;
 }
 
-.programGuide .caption, .programGuide .fileInfo {
+#czl2016 .programGuide .caption, .programGuide .fileInfo {
 	margin-left: 90px;
 }
 
-.articlethumb {
+
+#czl2016 dl {
+	font-size: 0.9em;
+}
+
+#czl2016 dt {
+	width: 200px;
+	float: left;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#czl2016 dt:after {
+	font-weight: normal;
+	content: ".....................................................";
+}
+
+#czl2016 dd {
+	margin-left: 210px;
+	margin-bottom: 0.4em;
+}
+
+
+#czl2016 .articlethumb {
 	display: inline-block;
 	font-size: 0.9em;
 	text-align: center;
 	margin-right: 30px;
 }
 
-.articlethumb a {
+#czl2016 .articlethumb a {
 	display: block;
 }
 
-.articlethumb img {
+#czl2016 .articlethumb img {
 	border: 1px solid #666;
 }
 
-.gallery .picture {
+#czl2016 .gallery .picture {
 	margin-bottom: 3em;
 	max-width: 1024px;
 }
 
-.gallery .picture.portrait {
+#czl2016 .gallery .picture.portrait {
 	width: 66%;
 	max-width: 680px;
 }
 
-.gallery .picture img {
+#czl2016 .gallery .picture img {
 	width: 100%;
 }
 
-.gallery .picture .caption {
+#czl2016 .gallery .picture .caption {
 	background-color: #000;
 	padding: 0.5em 1.5em;
 	color: #fff;
