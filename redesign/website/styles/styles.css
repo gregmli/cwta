@@ -1036,7 +1036,7 @@ p.byline {
 }
 
 #czl2016 dt {
-	width: 200px;
+	width: 205px;
 	float: left;
 	font-weight: bold;
 	white-space: nowrap;
@@ -1045,7 +1045,7 @@ p.byline {
 
 #czl2016 dt:after {
 	font-weight: normal;
-	content: ".....................................................";
+	content: " ..........................................................................................................";
 }
 
 #czl2016 dd {
