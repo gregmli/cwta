@@ -750,6 +750,29 @@ p.byline {
 	padding: 0;
 	
 	opacity: 0.9;
+	border-spacing: 2px 0px;
+}
+
+
+#schedule .week th {
+	background-color: #e6ccbf;
+	
+	height: 35px;
+	font-family: "myriad-pro-condensed", helvetica, arial;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: top;
+	padding-bottom: 0.3em;
+}
+
+#schedule .week th .dayname {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+
+#schedule .week th .location {
+	margin-top: -0.3em;
 }
 
 #schedule .week td {
@@ -758,16 +781,6 @@ p.byline {
 	width: 14.28%;
 	background-color: #fdefe6;
 	vertical-align: top;
-}
-
-#schedule .week td .dayname {
-	background-color: #e6ccbf;
-	font-size: 1.4em;
-	height: 35px;
-	line-height: 35px;
-	font-family: "myriad-pro-condensed", helvetica, arial;
-	font-weight: bold;
-	text-align: center;
 }
 
 #schedule .week .event {
