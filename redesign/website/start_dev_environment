@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#
+# I created this file because the updates for CWTA are infrequent, and every time I have to do them
+# I've forgotten what commands I need to run to get the dev env up
+#
+
+echo Updating GCloud Components...
+sudo gcloud components update
+
+cd ~/code/cwta/redesign/website
+dev_appserver.py app.yaml
