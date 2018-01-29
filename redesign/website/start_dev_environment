@@ -12,4 +12,4 @@ cd ~/code/cwta/redesign/website
 dev_appserver.py app.yaml
 
 echo When you are ready to deploy changes:
-echo > gcloud app deploy --no-promote
+echo "> gcloud app deploy --no-promote"
