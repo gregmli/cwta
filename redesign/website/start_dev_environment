@@ -6,7 +6,7 @@
 #
 
 echo Updating GCloud Components...
-sudo gcloud components update
+gcloud components update
 
 cd ~/code/cwta/redesign/website
 dev_appserver.py app.yaml
