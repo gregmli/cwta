@@ -8,8 +8,8 @@
 echo Updating GCloud Components...
 gcloud components update
 
-cd ~/code/cwta/redesign/website
-dev_appserver.py app.yaml
+
+dev_appserver.py ~/code/cwta/redesign/website
 
 echo When you are ready to deploy changes:
 echo "> gcloud app deploy --no-promote"
