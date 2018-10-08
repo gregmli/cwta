@@ -445,6 +445,10 @@ p.byline {
 	background-image: url(/images/cwta-021.jpg);
 }
 
+#homepage .photobar.about .inner {
+	padding-bottom: 250px;
+}
+
 #homepage .photobar.news {
 	background-image: url(/images/cwta-002.jpg);
 }
@@ -744,7 +748,7 @@ p.byline {
 	width: 98%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 6em;
+	margin-bottom: 2em;
 	padding: 0;
 	
 	opacity: 0.9;
@@ -788,6 +792,20 @@ p.byline {
 
 #schedule .week .event .time {
 	font-weight: bold;
+}
+
+#schedule .photobar.schedule .locationNote {
+	text-align: center;
+	margin: 2em auto 4em;
+}
+
+#schedule .photobar.schedule .locationNote .inner {
+	display: inline-block;
+	width: auto;
+	padding: 0.5em 2em;
+	background-color: #fdefe6;
+	opacity: 0.8;
+	font-style: italic;
 }
 
 #schedule .class {
