@@ -403,6 +403,19 @@ p.byline {
 	-moz-column-count: 2;
 }
 
+.skinnylist ol {
+	margin-top: 0;
+}
+
+
+h4 .chinese {
+	font-weight: normal;
+}
+
+/* need this to equalize the height of the characters with Myriad */
+.hanzi {
+	font-size: 0.9em;
+}
 
 .testimonial p {
 	margin-bottom: 0.6em;
