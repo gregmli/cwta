@@ -514,6 +514,19 @@ h4 .chinese {
 	margin: 2em 0 ;
 }
 
+#homepage .class .time {
+	margin: 0.1em 0;
+}
+
+#homepage .class .location {
+	margin: 0.1em 0 0.6em;
+}
+
+
+#homepage .class .instructors {
+	margin: 0.6em 0 0.8em;
+}
+
 #homepage .price {
 	margin-bottom: 0;
 }
@@ -833,16 +846,26 @@ h4 .chinese {
 	width: 100%;
 }
 
-#schedule .class .instructors,
-#schedule .class .time {
+#schedule .class .time,
+#schedule .class .location,
+#schedule .class .instructors {
 	font-size: 15px;
 	font-style: italic;
 	line-height: 100%;
+	
+}
+
+#schedule .class .time {
 	margin: 0.1em 0 0.2em;
 }
 
+#schedule .class .location {
+	margin: 0.1em 0 0.6em;
+}
+
+
 #schedule .class .instructors {
-	margin: 0.4em 0 0.8em;
+	margin: 0.6em 0 0.8em;
 }
 
 #schedule .class .instructors em {
