@@ -34,7 +34,7 @@ class HomePage(CwtaPage):
         
 
 app = webapp2.WSGIApplication([('/', HomePage),
-                               ('/(classes|instructors|chen|yang|czl2016)(?i)', CwtaPage)
+                               ('/(classes|instructors|chen|yang|resources|czl2016)(?i)', CwtaPage)
                               ],
                               debug=True)
 
