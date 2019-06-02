@@ -828,56 +828,64 @@ h4 .chinese {
 #schedule .photobar.schedule .locationNote .inner {
 	display: inline-block;
 	width: auto;
-	padding: 0.5em 2em;
+	padding: 1em 2em;
 	background-color: #fdefe6;
-	opacity: 0.8;
+	opacity: 1;
 	font-style: italic;
 }
 
-#schedule .class {
+.class-list .class {
 	margin: 1em 0 1.5em;
 }
 
-#schedule .class h4 {
+.class-list .class h4 {
 	margin: 0;
 }
 
-#schedule .class .description img {
+.class-list .class .description img {
 	width: 100%;
 }
 
-#schedule .class .time,
-#schedule .class .location,
-#schedule .class .instructors {
+.class-list .class .time,
+.class-list .class .location,
+.class-list .class .instructors {
 	font-size: 15px;
-	font-style: italic;
 	line-height: 100%;
 	
 }
 
-#schedule .class .time {
+.class-list .class label {
+	color: #666;
+	font-weight: bold;
+}
+
+.class-list .class .time {
 	margin: 0.1em 0 0.2em;
 }
 
-#schedule .class .location {
+.class-list .class .startDate {
+	font-style: italic;
+}
+
+.class-list .class .location {
 	margin: 0.1em 0 0.6em;
 }
 
 
-#schedule .class .instructors {
-	margin: 0.6em 0 0.8em;
+.class-list .class .instructors {
+	margin: 0.6em 0 1.2em;
 }
 
-#schedule .class .instructors em {
+.class-list .class .instructors em {
 	font-style: normal;
 }
 
-#schedule .class .description p {
+.class-list .class .description p {
 	line-height: 125%;
 	margin: 0.2em 0 0.4em;
 }
 
-#schedule .class .tuition {
+.class-list .class .tuition {
 	margin: 0 0 1em;
 	line-height: 100%;
 }
@@ -904,6 +912,26 @@ h4 .chinese {
 	padding: 0;
 	list-style-type: none;
 	line-height: 100%;
+}
+
+.private-lessons li {
+	margin: 0.6em 0 1em;
+}
+
+.private-lessons table {
+	border-collapse: collapse;
+}
+
+.private-lessons table .rate {
+	width: 10em;
+}
+
+.private-lessons th, .private-lessons td {
+	border-bottom: 1px solid #aaa;
+	padding: 0.5em;
+}
+.private-lessons th {
+	text-align: left;
 }
 
 
