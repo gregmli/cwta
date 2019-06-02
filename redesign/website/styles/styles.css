@@ -894,6 +894,12 @@ h4 .chinese {
 	margin-bottom: 0.5em;
 }
 
+#schedule .quarter-schedule .note {
+	font-style: italic;
+	color: #666;
+	margin-top: 0.2em;
+}
+
 #schedule .registration strong {
 	font-size: 1.2em;
 }
@@ -977,6 +983,7 @@ h4 .chinese {
 #instructors .instructor {
 	clear: left;
 	margin: 0 0 3em;
+	overflow: auto;
 }
 
 #instructors #testimonials .inner {
