@@ -136,6 +136,15 @@ a img {
 	color: #d00;
 }
 
+.highlighted {
+	background-color: #f6f6f6;
+	border: 1px solid #d6d6d6;
+	border-top: 3px solid #e23173;
+	border-radius: 4px;
+	padding: 12px 14px;
+
+}
+
 p.byline {
 	font-style: italic;
 	margin: 0 0 1.5em;
