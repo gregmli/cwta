@@ -156,7 +156,7 @@ p.byline {
 	font-size: 1.6em;
 }
 
-.solidbar h3:first-child {
+.solidbar > h3:first-child, .solidbar > div:first-child > h3:first-child {
 	margin-top: 0;
 }
 
