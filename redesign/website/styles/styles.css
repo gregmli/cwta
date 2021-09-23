@@ -87,6 +87,16 @@ a img {
  
 \************************************************************************************/
 
+
+.announce-warning {
+	border: 1px solid #9e8c00;
+	color: #7d6f00;
+	background-color: #fff185;
+	padding: 10px 15px;
+	margin-bottom: 3em;
+
+}
+
 .covid-bold {
 	font-weight: bold;
 	color: #c00;
