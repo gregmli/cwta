@@ -6,6 +6,7 @@ from google.appengine.api import users
 import jinja2
 import os
 import urllib
+from datetime import datetime
 
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -22,9 +23,10 @@ jinja_environment.filters['urlencode'] = urlencode_filter
     
         
 class CwtaPage(webapp2.RequestHandler):    
-    def get(self, page):        
+    def get(self, page):
+        current_year = datetime.now().year
         template = jinja_environment.get_template(page + '.html')
-        self.response.out.write(template.render())
+        self.response.out.write(template.render(current_year=current_year))
         
 
 class HomePage(CwtaPage):
