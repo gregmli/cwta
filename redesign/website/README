@@ -1,0 +1,15 @@
+Getting Started
+1. Install brew
+2. Install Pyenv
+3. Use Python 2.7
+4. Install gcloud components for Python
+5. Use the start_dev_environment command to update gcloud and start the local dev server
+
+
+For Future References:
+This is still using Python 2.7. At some point it will need to be upgraded to use Python3, but App Engine support of Python3 is far from a seamless migration
+
+- Python 2.7 is no longer supported. Python3 is the standard
+- However, Google App Engine dev_appserver.py requires Python 2.7 to run (even if the app is Python3)
+- Library support in App Engine for Python3 is different - it seems like Jinja support isn't built in
+- I've seen references to Flask with Python3 apps. Flask uses Jinja internally
