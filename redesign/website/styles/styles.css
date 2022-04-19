@@ -368,6 +368,7 @@ p.byline {
 	height: 250px;
 	background-image: url("/images/map.png");
 	background-position: center center;
+	background-size: auto 250px;
 	text-decoration: none;
 }
 
