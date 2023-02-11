@@ -66,6 +66,11 @@ a img {
 	border: 0 none;
 }
 
+address {
+	margin-top: 0.5em;
+	padding-left: 20px;
+}
+
 
 .button {
 	padding: 0.6em 1em;
@@ -502,7 +507,7 @@ h4 .chinese {
 }
 
 #homepage .photobar.news {
-	background-image: url(/images/advanced-double-broadsword-class.jpg);
+	background-image: url(/images/chen-jiagou.jpg);
 }
  
 #homepage .photobar.czl {
@@ -991,11 +996,11 @@ h4 .chinese {
 }
 
 #instructors .photobar.testimonials {
-	background-image: url(/images/taichi-class-1.jpg);
+	background-image: url(/images/demo-team.jpg);
 }
 
 #instructors .photobar.assistants {
-	background-image: url(/images/cwta-022.jpg);
+	background-image: url(/images/chen-zhenglei-2.jpg);
 }
 
 #instructors .photobar.about {
@@ -1059,7 +1064,7 @@ h4 .chinese {
 
 
 #chentaichi .photobar.history {
-	background-image: url(/images/chen-old-frame-1-class.jpg);
+	background-image: url(/images/chen-jiagou-2.jpg);
 }
 
 #chentaichi .photobar.history .inner {
