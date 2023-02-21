@@ -508,6 +508,7 @@ h4 .chinese {
 
 #homepage .photobar.news {
 	background-image: url(/images/chen-jiagou.jpg);
+	height: 400px;
 }
  
 #homepage .photobar.czl {
@@ -1064,7 +1065,7 @@ h4 .chinese {
 
 
 #chentaichi .photobar.history {
-	background-image: url(/images/chen-jiagou-2.jpg);
+	background-image: url(/images/chen-jiagou-2-mod.jpg);
 }
 
 #chentaichi .photobar.history .inner {
