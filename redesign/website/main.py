@@ -1,28 +1,8 @@
 from flask import Flask, render_template, abort
-# from google.appengine.api import wrap_wsgi_app
-# from google.appengine.api import users
-# from google.appengine.ext import db
-
-
-# import jinja2
-# import os
-# import urllib
 from datetime import datetime
 
-# jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
-
-
-# def urlencode_filter(s):
-#     if type(s) == 'Markup':
-#         s = s.unescape()
-#     s = s.encode('utf8')
-#     s = urllib.quote_plus(s)
-#     return jinja2.Markup(s)
-
-# jinja_environment.filters['urlencode'] = urlencode_filter
 
 app = Flask(__name__, static_url_path='')
-# app.wsgi_app = wrap_wsgi_app(app.wsgi_app)
 
     
 @app.route('/<page>')
@@ -49,19 +29,4 @@ if __name__ == "__main__":
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
     app.run(host="127.0.0.1", port=8080, debug=True)
-
-# class CwtaPage(webapp2.RequestHandler):    
-#     def get(self, page):
-#         current_year = datetime.now().year
-#         template = jinja_environment.get_template(page + '.html')
-#         self.response.out.write(template.render(current_year=current_year))
-
-# class HomePage(CwtaPage):
-#     def get(self):
-#         super(HomePage,self).get('index')
-
-# app = webapp2.WSGIApplication([('/', HomePage),
-#                                ('/(classes|instructors|chen|yang|resources|czl2016)/?(?i)', CwtaPage)
-#                               ],
-#                               debug=True)
 
