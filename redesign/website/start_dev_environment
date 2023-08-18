@@ -9,7 +9,9 @@ echo Updating GCloud Components...
 gcloud components update
 
 
-env PYENV_VERSION=2.7.18 dev_appserver.py ~/code/cwta/redesign/website
+# dev_appserver.py ~/code/cwta/redesign/website
+# python3 /Users/gregmli/Applications/google-cloud-sdk/bin/dev_appserver.py ~/code/cwta/redesign/website
+python3 ~/code/cwta/redesign/website/main.py
 
 echo When you are ready to deploy changes:
 echo "> gcloud app deploy"
