@@ -14,9 +14,16 @@
 		
 		<div class="blurb">
 			<p>
-			Master Yijiao Hong founded the Chinese Wushu &amp; Taichi Academy LLC in 1996. Master Hong has
-			over {{ current_year - 1986 }} years of teaching experience both in China and the US. She is the former assistant professor of
-			ZheJiang University of Traditional Chinese Medicine, a 12th generation descendant of Chen
+				坐落在Mercer Island 的中国武术太极学院创建于1996年。院长洪一姣毕业于浙江师范大学，1992年获浙江省
+				全运会太极拳冠军，任教浙江中医药大学，2004年被国际武联授予武术国际级A等裁判。陈式太极十二代传人，陈
+				正雷大师入室弟子，任教华盛顿大学教职员工太极拳十余年。
+			</p>
+			<p>
+			Master Yijiao Hong founded the Chinese Wushu &amp; Taichi Academy LLC in 1996. Now the Academy 
+			is located in Mercer Island and all classes are in person.
+			Master Hong has {{ now.year - 1984 }} years of teaching experience both in China and the US. 
+			She was an assistant professor of
+			ZheJiang University of Traditional Chinese Medicine, and is a 12th generation descendant of Chen
 			Style Taichi, and an in-chamber disciple of GM Chen Zhenglei. Classes offer authentic Chen and Yang
 			Style Taichi, Qigong, push hands drilling, as well as bare hands and various short and long weapons forms.
 			Classes are divided and leveled to keep class sizes small, for personalized, step-by-step learning. Master
@@ -82,31 +89,7 @@
 
 	<div class="class-list">
 
-		<h3>New Beginners Classes for 2024</h3>
-		
-		<div class="class">
-			<h4>Yang Style Taichi 24 Forms for Beginners</h4>
-			<div class="time">Monday 9:15am-10:15am <span class="startDate">(starting Jul. 8, 2024)</span></div>
-			<div class="instructors"><label>Instructor:</label> Master Yijiao Hong</div>
-			<div class="tuition"><label>Tuition:</label> <strong>$280 (10 weeks &mdash; includes $60 t-shirt and registration fee)</strong></div>
-		</div>
-
-		<div class="class">
-			<h4>Chen Style Taichi Silk Reeling and 18 Forms for Beginners</h4>
-			<div class="time">Friday 7:30pm-8:30pm <span class="startDate">(starting Oct. 11, 2024)</span></div>
-			<div class="instructors"><label>Instructor:</label> Master Yijiao Hong</div>
-			<div class="tuition"><label>Tuition:</label> <strong>$280 (10 weeks &mdash; includes $60 t-shirt and registration fee)</strong></div>
-		</div>
-
-		<h3>New Beginners Classes for 2025</h3>
-
-		<div class="class">
-			<h4>Yang Style Taichi 24 Forms for Beginners</h4>
-			<div class="time">Saturday 3:00pm-4:00pm <span class="startDate">(starting Apr. 12, 2025)</span></div>
-			<div class="instructors"><label>Instructor:</label> Master Yijiao Hong</div>
-			<div class="tuition"><label>Tuition:</label> <strong>$280 (10 weeks &mdash; includes $60 t-shirt and registration fee)</strong></div>
-		</div>
-
+		{% include "includes/new_classes.html" %}
 
 	</div>
 
@@ -129,7 +112,7 @@
 	<h4>Space Is Limited for Beginners Classes</h4> 
 	<p>Secure your spot by registering now.</p>
 	<p>
-		Mail a completed <a href="images/CWTA_registration_form.docx">registration form</a>, and  check payable to &quot;CWTA LLC&quot; to:
+		Mail a completed <a href="images/CWTA_registration_form.docx">registration form</a>, and a $300 check payable to &quot;CWTA LLC&quot; to:
 		<address>
 			Chinese Wushu & Taichi Academy LLC <br/>
 			2827 80th Ave SE<br/>
@@ -137,12 +120,12 @@
 		</address>
 	</p>
 
-	<p>To register via email, send your completed <a href="images/CWTA_registration_form.docx">registration 
-		form</a> to <a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>. 
-		Payment options:</p>
-	<ul>
-		<li><strong>PayPal:</strong> $289 tuition ($280 + $9 PayPal fee) to yijiao@chinesewushutaichi.com</li>
-		<li><strong>Zelle:</strong> $280 to 2067499513</li>
+	<p class="payment-options">To register via email, send your completed 
+		<a href="images/CWTA_registration_form.docx">registration form</a> to 
+		<a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>. Payment options:</p>
+	<ul class="payment-options">
+		<li><strong>Paypal:</strong> $310 tuition ($300 + $10 PayPal fee) through PayPal to yijiao@chinesewushutaichi.com</li>
+		<li><strong>Zelle:</strong> $300 to 2067499513</li>
 	</ul>
 
 	</div>

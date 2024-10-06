@@ -29,68 +29,38 @@
 		</th>
 	</tr>
 	<tr>
+		{% for wday in range(7) %}
 		<td>
-			<!-- Sunday -->
-			<div class="event">
-				<div class="time">8:45am - 10:00am</div>
-				<div class="name">Intermediate Chen Style Taichi: 18 Forms &amp; Old Frame 1</div>
-			</div>
-			<div class="event">
-				<div class="time">10:00am - 11:30am/12:00pm</div>
-				<div class="name">Advanced Chen Style Taichi: 18 Forms, Old Frame 1 &amp; 2, New Frame, Fan, Push-hands, Broadsword, Sword, Double Broadswords, Guandao</div>
-			</div>
-		</td><td>
-			<!-- Monday -->
-			<div class="event">
-				<div class="time">9:15am - 10:15am</div>
-				<div class="name">Beginning Yang Style Taichi 24 Forms for Beginners 
-					(starts Jul. 8, 2024; <em>starting Oct 2024 class will go to 10:30am</em>)</div>
-			</div>
-
-			<div class="event">
-				<div class="time">6:15pm - 7:30pm</div>
-				<div class="name">Yang Style Taichi: 24 Forms</div>
-			</div>
-			<div class="event">
-				<div class="time">7:30pm - 8:45pm</div>
-				<div class="name">Intermediate Chen Style Taichi: 18 Forms, Fan, Old Frame 1 &amp; 2</div>
-			</div>
-		</td><td>
-			<!-- Tuesday -->
-		</td><td>
-			<!-- Wednesday -->
-		</td><td>
-			<!-- Thursday -->
-			
-
-		</td><td>
-			<!-- Friday -->
-			<div class="event">
-				<div class="time">6:15pm - 7:30pm</div>
-				<div class="name">Yang Style Taichi: 24 Forms</div>
-			</div>
-
-			<div class="event">
-				<div class="time">7:30pm - 8:30pm</div>
-				<div class="name">Beginning Chen Style Taichi for Beginners (starts Oct. 11, 2024; <em>starting Jan 2025 class will go to 8:45pm</em>)</div>
-			</div>
-
-		</td><td>
-			<!-- Saturday -->
-			<div class="event">
-				<div class="time">8:45am - 10:15am</div>
-				<div class="name">Intermediate Yang Style Taichi: 24 Forms, 85 Forms, &amp; 32 Sword Forms</div>
-			</div>
-			<div class="event">
-				<div class="time">10:15am - 11:30/11:45am</div>
-				<div class="name">Advanced Yang Style Taichi: 24, 85 Forms, Sword &amp; Push Hands</div>
-			</div>
-			<div class="event">
-				<div class="time">3:00pm - 4:00pm</div>
-				<div class="name">Beginning Chen Style Taichi for Beginners (starts Apr. 12, 2025; <em>starting July class will go to 4:15pm</em>)</div>
-			</div>
+			{% for class in classes | sort(attribute="startTime") %}
+				{% if (class.startDate.weekday() + 1) % 7 == wday %}
+					<div class="event">
+						<div class="time">
+							{{ class.startTime.strftime('%-I:%M%p') }}-{{ class.endTime.strftime('%-I:%M%p') }}
+							{%- if class.alternateEndTime %}/{{ class.alternateEndTime.strftime('%-I:%M%p') }}{% endif %}
+						</div>
+						<div class="name">
+							{{ class.name }}
+							{% if not class.isStarted() or class.scheduleNotes -%}
+								(
+								{%- if not class.isStarted() -%}
+									starts {{ class.startDate.strftime('%b. %-d, %Y') }}
+								{%- endif -%}
+								{%- if class.scheduleNotes -%}
+									{%- if not class.isStarted() -%}
+										;
+									{% endif %}
+									<em>{{ class.scheduleNotes }}</em>
+								{%- endif -%}
+								)
+							{%- endif %}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
 		</td>
+		{% endfor %}
 	</tr>
+
 	</table>
 	
 
@@ -105,30 +75,7 @@
 			<h3>Private Seminars</h3>
 			<p>Interested in Taichi seminars for a corporation, academic institution, or community center? Please email Master YiJiao Hong at <a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>.</p>
 
-			<h3>New Beginners Classes for 2024</h3>
-			
-			<div class="class">
-				<h4>Yang Style Taichi 24 Forms for Beginners</h4>
-				<div class="time">Monday 9:15am-10:15am <span class="startDate">(starting Jul. 8, 2024)</span></div>
-				<div class="instructors"><label>Instructor:</label> Master Yijiao Hong</div>
-				<div class="tuition"><label>Tuition:</label> <strong>$280 (10 weeks &mdash; includes $60 t-shirt and registration fee)</strong></div>
-			</div>
-
-			<div class="class">
-				<h4>Chen Style Taichi Silk Reeling and 18 Forms for Beginners</h4>
-				<div class="time">Friday 7:30pm-8:30pm <span class="startDate">(starting Oct. 11, 2024)</span></div>
-				<div class="instructors"><label>Instructor:</label> Master Yijiao Hong</div>
-				<div class="tuition"><label>Tuition:</label> <strong>$280 (10 weeks &mdash; includes $60 t-shirt and registration fee)</strong></div>
-			</div>
-	
-			<h3>New Beginners Classes for 2025</h3>
-	
-			<div class="class">
-				<h4>Yang Style Taichi 24 Forms for Beginners</h4>
-				<div class="time">Saturday 3:00pm-4:00pm <span class="startDate">(starting Apr. 12, 2025)</span></div>
-				<div class="instructors"><label>Instructor:</label> Master Yijiao Hong</div>
-				<div class="tuition"><label>Tuition:</label> <strong>$280 (10 weeks &mdash; includes $60 t-shirt and registration fee)</strong></div>
-			</div>
+			{% include "includes/new_classes.html" %}
 		</div>
 
 		<div class="description">
@@ -150,11 +97,8 @@
 		<div class="quarter-schedule">
 		<h3>2024</h3>
 		<ul>
-			<li><strong>1st quarter:</strong> January 5 - March 11 (10 weeks)</li>
-			<li><strong>2nd quarter:</strong> March 15 - June 10 (10 weeks) &mdash; no classes March 29 to April 15</li>
-			<li><strong>3rd quarter:</strong> July 5 - September 9 (10 weeks)</li>
 			<li><strong>4th quarter:</strong> October 4 - December 16 (10 weeks)
-				<div class="note">No classes Thanksgiving weekend November 22-25</div>
+				<div class="note">No classes Thanksgiving weekend November 29-December 2</div>
 			</li>
 		</ul>
 		</div>
@@ -162,11 +106,11 @@
 		<div class="quarter-schedule">
 			<h3>2025</h3>
 			<ul>
-				<li><strong>1st quarter:</strong> January 10 - March 17 (10 weeks)</li>
-				<li><strong>2nd quarter:</strong> April 11 - June 16 (10 weeks)</li>
+				<li><strong>1st quarter:</strong> January 3 - March 10 (10 weeks)</li>
+				<li><strong>2nd quarter:</strong> April 4 - June 9 (10 weeks)</li>
 				<li><strong>3rd quarter:</strong> July 11 - September 15 (10 weeks)</li>
 				<li><strong>4th quarter:</strong> October 10 - December 22 (10 weeks)
-					<div class="note">No classes Thanksgiving week November 19-25</div>
+					<div class="note">No classes Thanksgiving weekend November 28-December 1</div>
 				</li>
 			</ul>
 			</div>
@@ -176,11 +120,11 @@
 		<p>Payment is due before the end of the previous quarter. Payments 
 			received after the due date are subject to a $30 late fee.</p>
 		
-		<p class="warning">Please note: no refund / mininum one quarter commitment</p>
+		<p class="warning">Please note: no refund / minimum one quarter commitment</p>
 
 		<div class="registration">
 			<p>
-			To register by mail, send a completed <a href="images/CWTA_registration_form.docx">registration form</a>, and  check payable to &quot;CWTA LLC&quot; to:
+			To register by mail, send a completed <a href="images/CWTA_registration_form.docx">registration form</a>, and a $300 check payable to &quot;CWTA LLC&quot; to:
 				<address>
 					Chinese Wushu & Taichi Academy LLC <br/>
 					2827 80th Ave SE<br/>
@@ -188,14 +132,24 @@
 				</address>
 			</p>
 			
-			<p>To register via email, send your completed <a href="images/CWTA_registration_form.docx">registration form</a> to <a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a> and pay $289 tuition ($280 + $9 PayPal fee) through PayPal to yijiao@chinesewushutaichi.com</p>
+			<p class="payment-options">To register via email, send your completed 
+				<a href="images/CWTA_registration_form.docx">registration form</a> to 
+				<a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>. Payment options:</p>
+			<ul class="payment-options">
+				<li><strong>Paypal:</strong> $310 tuition ($300 + $10 PayPal fee) through PayPal to yijiao@chinesewushutaichi.com</li>
+				<li><strong>Zelle:</strong> $300 to 2067499513</li>
+			</ul>
+				 
 
 			<p><a href="#contact">Contact us with any questions.</a></p>
 		</div>
 
 		<h3>Makeup Policy</h3>
     	<p>
-         Sometimes students will miss one or more classes due to an out of town trip, sickness etc. Students can make up classes by attending any similar class that occurs on another day. Please check with instructor to see what classes are available to use as make up classes. Also, instructors are available 10 minutes Before and after class to work with you on the new movements when you return to class.
+			For any missed classes, students can make up classes by attending any 
+			similar classes that occur on another day. Also, instructors could 
+			be available 10 minutes before or after class to work with you on 
+			any new movements you missed.
         </p>
 	</div>
 	

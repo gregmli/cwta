@@ -470,6 +470,13 @@ h4 .chinese {
 	font-style:italic;
 }
 
+p.payment-options {
+	margin-bottom: 0.4em;
+}
+
+ul.payment-options {
+	margin: 0;
+}
 
 /************************************************************************************\
  
@@ -945,9 +952,7 @@ h4 .chinese {
 	margin-top: 0.2em;
 }
 
-#schedule .registration strong {
-	font-size: 1.2em;
-}
+#schedule .registration li
 
 #schedule .secondary h3 {
 	margin-bottom: 0.4em;
@@ -955,10 +960,14 @@ h4 .chinese {
 
 #schedule .secondary ul {
 	margin: 0;
+}
+
+#schedule .quarter-schedule ul {
+	margin: 0;
 	padding: 0;
 }
 
-#schedule .secondary li {
+#schedule .quarter-schedule li {
 	margin: 0 0 0.8em;
 	padding: 0;
 	list-style-type: none;
