@@ -44,10 +44,6 @@ h2 {
 	font-size: 36px;	
 }
 
-h3 {
-
-}
-
 h4 {
 	font-size: 18px;
 	margin: 2em 0 1em;
@@ -1104,7 +1100,6 @@ ul.payment-options {
 }
 
 #chentaichi #tab-practice dt {
-	break: left;
 	float: left;
 	font-weight: normal;
 	margin-right: 0.5em;
@@ -1113,12 +1108,6 @@ ul.payment-options {
 #chentaichi #tab-practice dd {
 	font-style: italic;
 }
-
-
-#chentaichi .resource-list {
-	
-}
-
 
 
 /************************************************************************************\
@@ -1192,10 +1181,6 @@ ul.payment-options {
 	text-decoration: none;
 }
 
-#resources .inner .links li a .image {
-
-}
-
 #resources .inner .links li img {
 	display: block;
 	height: 125px;
@@ -1235,10 +1220,6 @@ ul.payment-options {
 #czl2016 .photobar.czl2016 .inner {
 	padding-top: 250px; 
 	
-}
-
-#czl2016 .intro {
-	width: ;
 }
 
 #czl2016 .programGuide {
