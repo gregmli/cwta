@@ -147,6 +147,12 @@ address {
 	float: left;
 }
 
+.solidbar .photo-show {
+	width: 80%;
+	float: left;
+}
+
+
 .solidbar .secondary {
 	width: 35%;
 	float: left;
@@ -316,42 +322,19 @@ p.byline {
 }
 
 .photobar.contact h2 {
-	font-size: 2em;
-	color: #fff;
-	float: left;
-	width: 12em;
-	margin-top: 1em;
-}
-
-.photobar.contact h2 strong {
-	font-size: 1.4em;
-	line-height: 1.1em;
-}
-.photobar.contact h2 strong em {
-	line-height: 1.2em;
-	font-size: 1.8em;
-	font-style: normal;
+	font-size: 3em;
+	
+	margin-bottom: 0.6em;
 }
 
 .photobar.contact .location {
 	background-color: #fff;
 	background-color: rgba(255,255,255,0.9);
-	margin-left: 350px;
 	padding: 30px;
-}
-
-.photobar.contact .location .data {
-	/* clear the address and contactInfo div so the map doesn't overlap */
-	overflow: hidden;
 }
 
 .photobar.contact .location a {
 	color: #004B91;
-}
-
-.photobar.contact .location .address,
-.photobar.contact .location .contactInfo {
-	float: left;
 }
 
 .photobar.contact .location .address {
@@ -359,14 +342,38 @@ p.byline {
 	width: 12em;
 }
 
-.photobar.contact .location .map {
-	margin-top: 1em;
+.photobar.contact .location ul {
+	margin: 0;
+	padding: 0
+}
+
+.photobar.contact .location li {
+	list-style-type: none;
+	display: inline-block;
+	width: 45%;
+	min-width: 200px;
+	/* height: 200px; */
+	margin: 1em 20px 1em 0;
+	vertical-align: top;
+}
+
+.photobar.contact .location li:last-child {
+	padding-right: 0px;
+}
+
+.photobar.contact .location li a.map, .photobar.contact .location li > img {
 	border: 1px solid #666;
 }
 
-.photobar.contact .location .map a {
+.photobar.contact .location li img {
+	width: 100%;
+	height: auto;
+}
+
+.photobar.contact .location a.map {
 	display: block;
 	height: 250px;
+	/* aspect-ratio: 2/1; */
 	background-image: url("/images/map.png");
 	background-position: center center;
 	background-size: auto 250px;
