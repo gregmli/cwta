@@ -481,6 +481,30 @@ ul.payment-options {
 	margin: 0;
 }
 
+
+.programGuide {
+	display: inline-block;
+}
+.programGuide a {
+	display: block;
+}
+.programGuide img {
+	height: 100px;
+}
+
+.programGuide .thumbnail {
+	float: left;
+}
+
+.programGuide .caption {
+	font-weight: normal;
+}
+
+.programGuide .caption, .programGuide .fileInfo {
+	margin-left: 90px;
+}
+
+
 /************************************************************************************\
  
  homepage
@@ -646,7 +670,7 @@ ul.payment-options {
 	position: relative;
 	display: block;
 	border: 4px solid rgba(0,0,238,0.6);
-
+	width: 400px;
 }
 
 
@@ -656,9 +680,11 @@ ul.payment-options {
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 2em;
-	top: 110px;
-	right: 10px;
+	font-size: 1.3em;
+	width: 300px;
+	bottom: 20px;
+	left: 0;
+	right: 0;
 	margin: 0.5em auto;
 	padding: 0.5em 0.7em;
 
@@ -666,7 +692,7 @@ ul.payment-options {
 
 	color: #fff;
 	background-color: #00e;	
-	opacity: 0.6;
+	opacity: 0.7;
 }
 
 
@@ -683,116 +709,71 @@ ul.payment-options {
 	z-index: 99;
 }
 
+#homepage #czl h4 {
+	margin: 1em 0 0.4em;
+}
+
 #homepage #czl dl {
 	font-size: 0.9em;
+	margin: 0.2em 0;
+
 }
 
 #homepage #czl dt {
-	width: 140px;
+	width: 70px;
 	float: left;
 	font-weight: bold;
 	white-space: nowrap;
 }
 
 #homepage #czl dd {
-	margin-left: 150px;
-	margin-bottom: 0.4em;
+	margin-left: 75px;
+	margin-bottom: 0;
 }
 
-
-#homepage #czl .day {
-	clear: left;
+#homepage #czl ul {
+	margin-top: 0;
+	margin-bottom: 1em;
 }
 
-#homepage #czl .day .date {
-	line-height: normal;
-	float: left;
-	width: 65px;
-	text-align: center;
-	border: 1px solid #aaa;
-	padding: 2px;
-}
-
-#homepage #czl .day .date .day {
-	text-transform: uppercase;
-	font-size: 0.6em;
-	display: block;
-	background-color: #c00;
-	color: #fff;
-	padding: 0.2em;
+#homepage #czl .date {
+	font-weight: bold;
 	margin-bottom: 0.2em;
 }
 
-#homepage #czl .day .date .month {
-	display: block;
-	font-size: 0.8em;
+#homepage #czl address {
+	margin-top: 0;
 }
 
-#homepage #czl .day .date .mdate {
-	display: block;
-	font-size: 2em;
-	color: #000;
-	margin-top: -0.2em;
-	font-weight: 300;
-}
-
-#homepage #czl .day .class {
-	margin-left: 75px;
-}
-
-#homepage #czl .day .class h4 .cost {
-	float: right;
-	margin-left: 1em;
-	color: #666;
-	font-weight: normal;
+#homepage #czl .class-block {
+	padding-bottom: 1.5em;
+	border-bottom: 1px solid #000;
+	margin-bottom: 2em;
 }
 
 
-
-#homepage #czl .day .class .description p {
-	margin-bottom: 0.6em;
-}
-
-#homepage #czl .day .class .location {
+#homepage #czl article p.description, 
+#homepage #czl article p.target-audience {
 	font-size: 0.9em;
-	line-height: normal;
+}
+
+#homepage #czl article .description {
+	margin: 0 0 0.2em;
+}
+
+#homepage #czl article .target-audience {
+	margin: 0 0 1em;
 	font-style: italic;
 }
 
-#homepage #czl #locationInfo .map a {
-	display: block;
-	border: 1px solid #333;
-	height: 200px;
-	background-position: center center;
-	margin-bottom: 2em;
-	text-decoration: none;
+#homepage #czl section#registration-payment {
+	padding-bottom: 1.5em;
+	border-bottom: 1px solid #000;
+	margin-bottom: 3em;
 }
 
-#homepage #czl #locationInfo #thursdayClass .map a {
-	background-image: url("/images/seminar-loc-cwta.png");
-}
-
-#homepage #czl #locationInfo #otherClasses .map a {
-	background-image: url("/images/seminar-loc-ccc.png");
-}
-
-
-#homepage #czl .sponsorInfo p,
-#homepage #czl .sponsorInfo li {
-	font-size: 0.9em;
-	
-}
-
-#homepage #czl .sponsorInfo p {
-	margin: 1.2em 0 0;
-	font-weight: bold;
-}
-
-#homepage #czl .sponsorInfo ul,
-#homepage #czl .sponsorInfo li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+#homepage #czl .discounts p {
+	margin-bottom: 0.2em;
 }
 
 #homepage #news .registerNow p {
@@ -1228,29 +1209,6 @@ ul.payment-options {
 	padding-top: 250px; 
 	
 }
-
-#czl2016 .programGuide {
-	display: inline-block;
-}
-#czl2016 .programGuide a {
-	display: block;
-}
-#czl2016 .programGuide img {
-	height: 100px;
-}
-
-#czl2016 .programGuide .thumbnail {
-	float: left;
-}
-
-#czl2016 .programGuide .caption {
-	font-weight: normal;
-}
-
-#czl2016 .programGuide .caption, .programGuide .fileInfo {
-	margin-left: 90px;
-}
-
 
 #czl2016 dl {
 	font-size: 0.9em;
