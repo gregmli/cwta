@@ -7,8 +7,12 @@
         <h4>{{ class['name'] }}</h4>
         <div class="time">{{ class.startDate.strftime('%A %-I:%M%p') }}-{{ class.endTime.strftime('%-I:%M%p') }} <span class="startDate">(starting {{ class.startDate.strftime('%b. %-d, %Y') }})</span></div>
         <div class="instructors"><label>Instructor:</label> {{ class.instructor }}</div>
-        <div class="tuition"><label>Tuition:</label> <strong>${{ class.tuition }} ({{ class.tuitionNotes }})</strong></div>
+        <div class="tuition"><label>Tuition:</label> <strong>${{ class.tuition }} 
+            {% if class.tuitionNotes %}({{ class.tuitionNotes }}){% endif %}
+        </strong></div>
     </div>
     {% endfor %}
 
+    <p>3月21日是世界太极拳日<br/>
+        March 21 is recognized by UNESCO as International Taijiquan Day.</p>
 {% endfor %}
