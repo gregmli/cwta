@@ -1,4 +1,6 @@
-from flask import Flask, render_template, abort
+import os
+from functools import wraps
+from flask import Flask, render_template, abort, request, redirect, url_for
 from datetime import datetime, timedelta
 
 # from google.cloud import datastore
@@ -11,7 +13,8 @@ datastore_client = firestore.Client()
 
 
 class ClassDescription:
-    def __init__(self, firestoreBundle, target_tz):
+    def __init__(self, firestoreBundle, target_tz, id=None):
+        self._id = id
         self._name = firestoreBundle["name"]
         self._description = firestoreBundle["description"]
         self._instructor = firestoreBundle["instructor"]
@@ -38,6 +41,10 @@ class ClassDescription:
 
         self._scheduleNotes = firestoreBundle["scheduleNotes"]
     
+    @property
+    def id(self):
+        return self._id
+
     @property
     def name(self):
         return self._name
@@ -134,7 +141,7 @@ def getNewClasses(classes, currentDate):
 
 
 
-def fetchAllClasses():
+def fetchAllClasses(include_inactive=False):
     query = datastore_client.collection("class_schedules").order_by("startTime")
 
     docs = list(query.stream())
@@ -146,12 +153,79 @@ def fetchAllClasses():
     # classes = list(map(lambda d: d.to_dict(), docs))
     classes = []
     for d in docs:
-        c = ClassDescription(d.to_dict(), timezone)
+        c = ClassDescription(d.to_dict(), timezone, d.id)
 
-        if c.isActive:
+        if include_inactive or c.isActive:
             classes.append(c)
     
     return classes
+
+def requires_local(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        # Block access completely if running in App Engine production
+        if os.environ.get('GAE_ENV') == 'standard':
+            abort(404)
+        return f(*args, **kwargs)
+    return decorated
+
+@app.route('/admin/schedule')
+@requires_local
+def admin_schedule():
+    classes = fetchAllClasses(include_inactive=True)
+    classes.sort(key=lambda c: (not c.isActive, c.startDate.weekday(), c.startTime))
+    return render_template('admin_schedule.html', classes=classes)
+
+@app.route('/admin/schedule/edit/<id>')
+@requires_local
+def admin_schedule_edit(id):
+    classes = fetchAllClasses(include_inactive=True)
+    classes.sort(key=lambda c: (not c.isActive, c.startDate.weekday(), c.startTime))
+    class_edit = next((c for c in classes if c.id == id), None)
+    return render_template('admin_schedule.html', classes=classes, class_edit=class_edit)
+
+@app.route('/admin/schedule/save', methods=['POST'])
+@requires_local
+def admin_schedule_save():
+    id = request.form.get('id')
+    
+    start_date = request.form.get('startDate')
+    start_time = request.form.get('startTime')
+    
+    start_dt = None
+    if start_date and start_time:
+        dt = datetime.strptime(f"{start_date} {start_time}", '%Y-%m-%d %H:%M')
+        start_dt = dt.replace(tzinfo=timezone)
+    
+    # Combine start date with end times
+    def combine_time(base_dt, time_str):
+        if not base_dt or not time_str: return None
+        t = datetime.strptime(time_str, '%H:%M').time()
+        return base_dt.replace(hour=t.hour, minute=t.minute)
+
+    data = {
+        "name": request.form.get('name'),
+        "description": request.form.get('description'),
+        "instructor": request.form.get('instructor'),
+        "isActive": request.form.get('isActive') == 'true',
+        "isEnrollmentFull": request.form.get('isEnrollmentFull') == 'true',
+        "tuition": request.form.get('tuition'),
+        "tuitionNotes": request.form.get('tuitionNotes'),
+        "scheduleNotes": request.form.get('scheduleNotes'),
+        "startTime": start_dt,
+        "endTime": combine_time(start_dt, request.form.get('endTime')),
+        "alternateEndTime": combine_time(start_dt, request.form.get('alternateEndTime'))
+    }
+    
+    # Remove None values to avoid Firestore errors or overwriting with null
+    data_to_save = {k: v for k, v in data.items() if v is not None}
+
+    if id:
+        datastore_client.collection("class_schedules").document(id).set(data_to_save)
+    else:
+        datastore_client.collection("class_schedules").add(data_to_save)
+
+    return redirect('/admin/schedule')
 
 @app.route('/')
 def root():
@@ -167,4 +241,3 @@ if __name__ == "__main__":
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
     app.run(host="127.0.0.1", port=8080, debug=True)
-

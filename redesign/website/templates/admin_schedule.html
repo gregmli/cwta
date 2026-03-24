@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Schedule - Chinese Wushu &amp; Taichi Academy{% endblock %}
+
+{% block pageId %}admin_schedule{% endblock %}
+
+{% block content %}
+<div class="photobar schedule">
+	<div class="inner">
+		<h1><span>Admin Schedule</span></h1>
+	</div>
+</div>
+
+<div class="solidbar">
+    <div class="inner">
+        <h3>Existing Classes</h3>
+        <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Weekday</th>
+                    <th>Time</th>
+                    <th>Description</th>
+                    <th>Instructor</th>
+                    <th>Start Date</th>
+                    <th>Active</th>
+                    <th>Full</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for class in classes %}
+                <tr class="{% if not class.isActive %}inactive-class{% endif %}">
+                    <td>{{ class.startDate.strftime('%A') }}</td>
+                    <td>
+                        {{ class.startTime.strftime('%-I:%M%p') }}-{{ class.endTime.strftime('%-I:%M%p') }}
+                        {%- if class.alternateEndTime %}/{{ class.alternateEndTime.strftime('%-I:%M%p') }}{% endif %}
+                    </td>
+                    <td>
+                        {{ class.name }}
+                        {% if not class.isStarted() or class.scheduleNotes -%}
+                            (
+                            {%- if not class.isStarted() -%}
+                                starts {{ class.startDate.strftime('%b. %-d, %Y') }}
+                            {%- endif -%}
+                            {%- if class.scheduleNotes -%}
+                                {%- if not class.isStarted() -%}
+                                    ;
+                                {% endif %}
+                                <em>{{ class.scheduleNotes }}</em>
+                            {%- endif -%}
+                            )
+                        {%- endif %}
+                    </td>
+                    <td>{{ class.instructor }}</td>
+                    <td>{{ class.startDate.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ 'Yes' if class.isActive else 'No' }}</td>
+                    <td>{{ 'Yes' if class.isEnrollmentFull else 'No' }}</td>
+                    <td><a href="/admin/schedule/edit/{{ class.id }}#editUI">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3 id="editUI">{{ 'Edit Class' if class_edit else 'Add New Class' }}</h3>
+        <form action="/admin/schedule/save" method="post" style="max-width: 600px;">
+            {% if class_edit %}
+            <input type="hidden" name="id" value="{{ class_edit.id }}">
+            {% endif %}
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name" required style="width: 100%;" value="{{ class_edit.name if class_edit else '' }}">
+            </p>
+            <p>
+                <label for="description">Description:</label><br>
+                <textarea name="description" id="description" rows="4" style="width: 100%;">{{ class_edit.description if class_edit else '' }}</textarea>
+            </p>
+            <p>
+                <label for="instructor">Instructor:</label><br>
+                <input type="text" name="instructor" id="instructor" required style="width: 100%;" value="{{ class_edit.instructor if class_edit else 'Master Yijiao Hong' }}">
+            </p>
+            <p>
+                <label for="startDate">Start Date:</label><br>
+                <input type="date" name="startDate" id="startDate" required value="{{ class_edit.startDate.strftime('%Y-%m-%d') if class_edit else '' }}">
+                <div><small class="subtext">If the start date is in the future, and enrollment isn't full, class will show in the New Classes list</small></div>
+            </p>
+            <p>
+                <label for="startTime">Start Time:</label><br>
+                <input type="time" name="startTime" id="startTime" required value="{{ class_edit.startTime.strftime('%H:%M') if class_edit else '' }}">
+                
+            </p>
+            <p>
+                <label for="endTime">End Time:</label><br>
+                <input type="time" name="endTime" id="endTime" required value="{{ class_edit.endTime.strftime('%H:%M') if class_edit else '' }}">
+            </p>
+            <p>
+                <label for="alternateEndTime">Alternate End Time: (optional)</label><br>
+                <input type="time" name="alternateEndTime" id="alternateEndTime" value="{{ class_edit.alternateEndTime.strftime('%H:%M') if class_edit and class_edit.alternateEndTime else '' }}">
+                <div><small class="subtext">Optional field that will display an additional end time, in case a class has an extended portion where not all students might participate.</small></div>
+            </p>
+            <p>
+                <label for="tuition">Tuition:</label><br>
+                <input type="text" name="tuition" id="tuition" value="{{ class_edit.tuition if class_edit else '' }}">
+            </p>
+            <p>
+                <label for="tuitionNotes">Tuition Notes: (optional)</label><br>
+                <input type="text" name="tuitionNotes" id="tuitionNotes" style="width: 100%;" value="{{ class_edit.tuitionNotes if class_edit else '11 weeks, includes $50 registration fee' }}">
+                <div><small class="subtext">e.g. &quot;11 weeks, includes $50 registration fee&quot;</small></div>
+            </p>
+            <p>
+                <label for="scheduleNotes">Schedule Notes: (optional)</label><br>
+                <input type="text" name="scheduleNotes" id="scheduleNotes" style="width: 100%;" value="{{ class_edit.scheduleNotes if class_edit else '' }}">
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="isActive" value="true" {{ 'checked' if (not class_edit or class_edit.isActive) else '' }}> Is Active
+                </label>
+                <div><small class="subtext">Set to active to show in the schedule. Uncheck for old classes you want to hide/archive</small></div>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="isEnrollmentFull" value="true" {{ 'checked' if (class_edit and class_edit.isEnrollmentFull) else '' }}> Is Enrollment Full
+                </label>
+                <div><small class="subtext">Use this to hide a class from showing up in New Classes even if the start date is still in the future</small></div>
+            </p>
+            <p>
+                <button type="submit">{{ 'Save Changes' if (class_edit) else 'Add New Class' }}</button>
+                {% if class_edit %}
+                <button type="button" onclick="window.location.href='/admin/schedule'">Cancel</button>
+                {% endif %}
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

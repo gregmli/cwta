@@ -13,7 +13,16 @@ gcloud components update
 # python3 /Users/gregmli/Applications/google-cloud-sdk/bin/dev_appserver.py ~/code/cwta/redesign/website
 python3 ~/code/cwta/redesign/website/main.py
 
-echo When you are ready to deploy changes:
-echo "> gcloud app deploy --stop-previous-version --promote"
 echo
-echo remove the --promote option to stage this version. You will need to manually promote it later for it to become the default
+printf "Would you like to deploy the latest version? [y/N]: "
+read deploy_choice
+
+case "$deploy_choice" in
+  [yY] | [yY][eE][sS] )
+    echo "Deploying..."
+    gcloud app deploy app.yaml --stop-previous-version --promote
+    ;;
+  * )
+    echo "Skipping deployment."
+    ;;
+esac
