@@ -593,6 +593,11 @@ ul.payment-options {
 	z-index: 2;
 }
 
+.image-lightbox .previous,
+.image-lightbox .next {
+	padding-bottom: 6px;
+}
+
 .image-lightbox .close {
 	right: -12px;
 	top: -12px;
