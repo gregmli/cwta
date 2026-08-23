@@ -24,3 +24,52 @@ function updateMap() {
 	
 	mapImg.css({left: leftPos, top:topPos});
 }
+
+(function () {
+	var lightbox = document.getElementById('image-lightbox');
+	if (!lightbox) return;
+
+	var thumbnails = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-src]'));
+	var image = lightbox.querySelector('.image');
+	var closeButton = lightbox.querySelector('.close');
+	var currentIndex = 0;
+	var previouslyFocused = null;
+
+	function showPhoto(index) {
+		currentIndex = (index + thumbnails.length) % thumbnails.length;
+		image.src = thumbnails[currentIndex].getAttribute('data-lightbox-src');
+		image.alt = thumbnails[currentIndex].getAttribute('data-lightbox-alt');
+	}
+
+	function openLightbox(index) {
+		previouslyFocused = document.activeElement;
+		showPhoto(index);
+		lightbox.setAttribute('aria-hidden', 'false');
+		document.body.classList.add('lightbox-open');
+		closeButton.focus();
+	}
+
+	function closeLightbox() {
+		lightbox.setAttribute('aria-hidden', 'true');
+		document.body.classList.remove('lightbox-open');
+		image.src = '';
+		if (previouslyFocused) previouslyFocused.focus();
+	}
+
+	thumbnails.forEach(function (thumbnail, index) {
+		thumbnail.addEventListener('click', function () { openLightbox(index); });
+	});
+
+	Array.prototype.forEach.call(lightbox.querySelectorAll('[data-lightbox-close]'), function (control) {
+		control.addEventListener('click', closeLightbox);
+	});
+	lightbox.querySelector('[data-lightbox-previous]').addEventListener('click', function () { showPhoto(currentIndex - 1); });
+	lightbox.querySelector('[data-lightbox-next]').addEventListener('click', function () { showPhoto(currentIndex + 1); });
+
+	document.addEventListener('keydown', function (event) {
+		if (lightbox.getAttribute('aria-hidden') === 'true') return;
+		if (event.key === 'Escape' || event.keyCode === 27) closeLightbox();
+		if (event.key === 'ArrowLeft' || event.keyCode === 37) showPhoto(currentIndex - 1);
+		if (event.key === 'ArrowRight' || event.keyCode === 39) showPhoto(currentIndex + 1);
+	});
+}());
