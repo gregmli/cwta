@@ -100,6 +100,16 @@ body,td,th {
 {% endblock %}
 {% block htmlFooter %}
 
+<div class="image-lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+	<div class="backdrop" data-lightbox-close></div>
+	<div class="content">
+		<button class="close" type="button" data-lightbox-close aria-label="Close photo viewer">&times;</button>
+		<button class="previous" type="button" data-lightbox-previous aria-label="Previous photo">&#8249;</button>
+		<img class="image" src="" alt="" />
+		<button class="next" type="button" data-lightbox-next aria-label="Next photo">&#8250;</button>
+	</div>
+</div>
+
 <script src="/scripts/jquery-1.9.1.js"></script>
 <script src="/scripts/cwta.js"></script>
 
@@ -108,4 +118,3 @@ body,td,th {
 
 </body>
 </html>
-

@@ -29,7 +29,8 @@ function updateMap() {
 	var lightbox = document.getElementById('image-lightbox');
 	if (!lightbox) return;
 
-	var thumbnails = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-src]'));
+	var allThumbnails = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-src]'));
+	var thumbnails = [];
 	var image = lightbox.querySelector('.image');
 	var closeButton = lightbox.querySelector('.close');
 	var currentIndex = 0;
@@ -41,7 +42,10 @@ function updateMap() {
 		image.alt = thumbnails[currentIndex].getAttribute('data-lightbox-alt');
 	}
 
-	function openLightbox(index) {
+	function openLightbox(thumbnail) {
+		var gallery = thumbnail.parentNode;
+		thumbnails = Array.prototype.slice.call(gallery.querySelectorAll('[data-lightbox-src]'));
+		var index = thumbnails.indexOf(thumbnail);
 		previouslyFocused = document.activeElement;
 		showPhoto(index);
 		lightbox.setAttribute('aria-hidden', 'false');
@@ -56,8 +60,8 @@ function updateMap() {
 		if (previouslyFocused) previouslyFocused.focus();
 	}
 
-	thumbnails.forEach(function (thumbnail, index) {
-		thumbnail.addEventListener('click', function () { openLightbox(index); });
+	allThumbnails.forEach(function (thumbnail) {
+		thumbnail.addEventListener('click', function () { openLightbox(thumbnail); });
 	});
 
 	Array.prototype.forEach.call(lightbox.querySelectorAll('[data-lightbox-close]'), function (control) {

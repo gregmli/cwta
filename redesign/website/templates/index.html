@@ -41,6 +41,123 @@
 
 {% block content %}
 
+<div class="photobar news">
+	<div class="inner">
+		<h2><span>News</span></h2>
+	</div>
+</div>
+<div class="solidbar" id="news">
+
+	<div class="primary">
+
+		<div class="class-list">
+
+			{% include "includes/new_classes.html" %}
+
+		</div>
+
+	</div>
+
+	<div class="photo-show">
+		<p>
+			<img src="/images/outdoor-silk-reeling.jpg" width="100%" />
+		</p>
+		<p>
+			<img src="/images/czl2016_seminar_DSC_0007.jpg" width="100%" />
+		</p>
+		<p>
+			<img src="/images/chen-jiagou-2.jpg" width="100%" />
+		</p>
+		<p>
+			<img src="/images/yang-advanced-class.jpg" width="100%" />
+		</p>
+	</div>
+
+	<div class="primary">
+		<div class="description">
+			<p>Welcome to Yijiao Hong's taichi class! Begin a lifelong journey of destressing through correct body posture, authentic Taichi moves, and slow, even and deeper breaths to a calm mind and better health. Have fun with Chinese cultural experiences too! Master Hong will give in-depth, step-by-step instruction on authentic Yang and Chen Taichi movements and Qigong warm-ups from Traditional Chinese Medicine, using the latest in physical learning science. Master Hong will also talk about how Taichi originated from ancient Chinese philosophy, Chinese medicine and Qigong. The beginning class will emphasize the skills of self-centering, body relaxation, and slow breathing while practicing form movements. You can expect increased flexibility, leg strength, coordination, and balance, as well as learning to be relaxed in an energetic way.</p> 
+
+			<p>
+			<strong>Taichi is an ideal aerobic exercise for life time. </strong>
+			Do you know that practicing Taichi maintains spine health and increases bone density? It is beneficial to the cardio-vascular, respiratory, and nervous systems, digestive system, balance and also improves circulation of Chi. Master Hong's long-term Taichi students report that practicing Taichi helps alleviate hypertension, asthma, knee pain, and stress, while also improving mental, body strength and overall happiness.
+			</p>
+			
+		</div>
+
+
+		<div class="registerNow">
+			<h4>Space Is Limited for Beginners Classes</h4> 
+			<p>Secure your spot by registering now.</p>
+			<p>
+				Mail a completed <a href="/images/CWTA_registration_form.docx">registration form</a>, and a $330 check payable to &quot;CWTA LLC&quot; to:
+				<address>
+					Chinese Wushu & Taichi Academy LLC <br/>
+					2827 80th Ave SE<br/>
+					Mercer Island, WA 98040
+				</address>
+			</p>
+
+			<p class="payment-options">To register via email, send your completed 
+				<a href="images/CWTA_registration_form.docx">registration form</a> to 
+				<a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>. Payment options:</p>
+			<ul class="payment-options">
+				<!-- li><strong>Paypal:</strong> $310 tuition ($300 + $10 PayPal fee) through PayPal to yijiao@chinesewushutaichi.com</li -->
+				<li><strong>Zelle:</strong> $330 to 2067499513</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="primary">
+		<h3>Private Seminars</h3>
+			<p>Interested in Taichi seminars for a corporation, academic institution, or your community? Please email Master Yijiao Hong at <a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>.</p>
+
+		<div class="image-gallery" aria-label="Private seminar photos">
+			<div class="grid">
+				{% for photo in [
+					('chihuly-garden.jpg', 'Private Taichi seminar at Chihuly Garden'),
+					('bellevue-library-taichi.jpg', 'Private Taichi seminar at Bellevue Library'),
+					('uw-grieg-garden.jpg', 'Private Taichi seminar at the University of Washington Grieg Garden')
+				] %}
+				<button class="thumbnail" type="button" data-lightbox-src="/images/{{ photo[0] }}" data-lightbox-alt="{{ photo[1] }}" aria-label="Enlarge {{ photo[1] }}">
+					<img src="/images/{{ photo[0] }}" alt="{{ photo[1] }}" loading="lazy" />
+				</button>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="primary">
+	<h3>Follow Online: Chen Taichi Warmup Exercises</h3>
+	<p>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/mJqr5HC2EyI" frameborder="0" allowfullscreen></iframe></p>
+
+	<h3>Learn Yang Style Taichi 24 Forms Online</h3>
+    <p>Learn and review Yang Style Taichi 24 Forms from international Taichi Grand Champion Yijiao Hong.</p>
+    
+	
+    <h4>24 Forms, in Two Views</h4>
+    <div class="trailer">
+    <iframe src="//player.vimeo.com/video/94098687" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <p><a href="http://vimeo.com/94098687">View on Vimeo</a></p>
+    </div>
+
+    <h4>24 Forms, in Forest</h4>
+    <div class="trailer">
+    <iframe src="//player.vimeo.com/video/95477026" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+    <p><a href="http://vimeo.com/95477026">View on Vimeo</a></p>
+    </div>
+    
+    
+	    
+	</div>
+	
+	<div class="breaker">&nbsp;</div>
+</div>
+
 <div class="photobar czl">
 	<div class="inner">
 		<h2><span>Grandmaster Chen Zhenglei</span></h2>
@@ -83,8 +200,8 @@
 	</section>
 
 	</div>
-    
-    <div class="breaker">&nbsp;</div>
+
+	<div class="breaker">&nbsp;</div>
 
 	<div>
 		<h4>Pictures and Video from 2016 &quot;The Light of Taichi&quot; Summer Camp</h4>
@@ -95,129 +212,6 @@
 		</a>
 	</div>
 </div>
-
-<div class="image-lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Grandmaster Chen 2026 photo viewer" aria-hidden="true">
-	<div class="backdrop" data-lightbox-close></div>
-	<div class="content">
-		<button class="close" type="button" data-lightbox-close aria-label="Close photo viewer">&times;</button>
-		<button class="previous" type="button" data-lightbox-previous aria-label="Previous photo">&#8249;</button>
-		<img class="image" src="" alt="" />
-		<button class="next" type="button" data-lightbox-next aria-label="Next photo">&#8250;</button>
-	</div>
-</div>
-
-<div class="photobar news">
-	<div class="inner">
-		<h2><span>News</span></h2>
-	</div>
-</div>
-<div class="solidbar" id="news">
-	
-	<div class="photo-show">
-		<h3>Private Seminars</h3>
-			<p>Interested in Taichi seminars for a corporation, academic institution, or your community? Please email Master Yijiao Hong at <a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>.</p>
-
-		<p>
-			<img src="/images/chihuly-garden.jpg" width="100%" />
-		</p>
-
-		<p>
-			<img src="/images/bellevue-library-taichi.jpg" width="100%" />
-		</p>
-
-		<p>
-			<img src="/images/uw-grieg-garden.jpg" width="100%" />
-		</p>
-	</div>
-
-	<div class="primary">
-
-		<div class="class-list">
-
-			{% include "includes/new_classes.html" %}
-
-		</div>
-
-	</div>
-
-	<div class="photo-show">
-		<p>
-			<img src="/images/outdoor-silk-reeling.jpg" width="100%" />
-		</p>
-		<p>
-			<img src="/images/czl2016_seminar_DSC_0007.jpg" width="100%" />
-		</p>
-		<p>
-			<img src="/images/chen-jiagou-2.jpg" width="100%" />
-		</p>
-		<p>
-			<img src="/images/yang-advanced-class.jpg" width="100%" />
-		</p>
-	</div>
-
-	<div class="primary">
-		<div class="description">
-			<p>Welcome to Yijiao Hong's taichi class! Begin a lifelong journey of destressing through correct body posture, authentic Taichi moves, and slow, even and deeper breaths to a calm mind and better health. Have fun with Chinese cultural experiences too! Master Hong will give in-depth, step-by-step instruction on authentic Yang and Chen Taichi movements and Qigong warm-ups from Traditional Chinese Medicine, using the latest in physical learning science. Master Hong will also talk about how Taichi originated from ancient Chinese philosophy, Chinese medicine and Qigong. The beginning class will emphasize the skills of self-centering, body relaxation, and slow breathing while practicing form movements. You can expect increased flexibility, leg strength, coordination, and balance, as well as learning to be relaxed in an energetic way.</p> 
-
-			<p>
-			<strong>Taichi is an ideal aerobic exercise for life time. </strong>
-			Do you know that practicing Taichi maintains spine health and increases bone density? It is beneficial to the cardio-vascular, respiratory, and nervous systems, digestive system, balance and also improves circulation of Chi. Master Hong's long-term Taichi students report that practicing Taichi helps alleviate hypertension, asthma, knee pain, and stress, while also improving mental, body strength and overall happiness.
-			</p>
-			
-		</div>
-
-
-		<div class="registerNow">
-		<h4>Space Is Limited for Beginners Classes</h4> 
-		<p>Secure your spot by registering now.</p>
-		<p>
-			Mail a completed <a href="/images/CWTA_registration_form.docx">registration form</a>, and a $330 check payable to &quot;CWTA LLC&quot; to:
-			<address>
-				Chinese Wushu & Taichi Academy LLC <br/>
-				2827 80th Ave SE<br/>
-				Mercer Island, WA 98040
-			</address>
-		</p>
-
-		<p class="payment-options">To register via email, send your completed 
-			<a href="images/CWTA_registration_form.docx">registration form</a> to 
-			<a href="mailto:yijiao@chinesewushutaichi.com">yijiao@chinesewushutaichi.com</a>. Payment options:</p>
-		<ul class="payment-options">
-			<!-- li><strong>Paypal:</strong> $310 tuition ($300 + $10 PayPal fee) through PayPal to yijiao@chinesewushutaichi.com</li -->
-			<li><strong>Zelle:</strong> $330 to 2067499513</li>
-		</ul>
-
-	</div>
-
-
-	<h3>Follow Online: Chen Taichi Warmup Exercises</h3>
-	<p>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/mJqr5HC2EyI" frameborder="0" allowfullscreen></iframe></p>
-
-	<h3>Learn Yang Style Taichi 24 Forms Online</h3>
-    <p>Learn and review Yang Style Taichi 24 Forms from international Taichi Grand Champion Yijiao Hong.</p>
-    
-	
-    <h4>24 Forms, in Two Views</h4>
-    <div class="trailer">
-    <iframe src="//player.vimeo.com/video/94098687" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <p><a href="http://vimeo.com/94098687">View on Vimeo</a></p>
-    </div>
-
-    <h4>24 Forms, in Forest</h4>
-    <div class="trailer">
-    <iframe src="//player.vimeo.com/video/95477026" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-    <p><a href="http://vimeo.com/95477026">View on Vimeo</a></p>
-    </div>
-    
-    
-	    
-	</div>
-	
-	<div class="breaker">&nbsp;</div>
-</div>
-
-
 
 <div class="photobar about">
 	<div class="inner">
