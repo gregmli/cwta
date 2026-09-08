@@ -713,6 +713,10 @@ body.lightbox-open {
 	font-size: 16px;
 }
 
+#homepage .class-list {
+	margin-bottom: 3em;
+}
+
 
 #homepage .class {
 	margin: 2em 0 ;
