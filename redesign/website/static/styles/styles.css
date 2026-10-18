@@ -1414,3 +1414,16 @@ tr.inactive-class td {
 #admin_schedule form p {
 	margin: 1.2em 0 0;
 }
+
+/* Keep the beginner information together, followed by compact class photos. */
+#homepage #news > .primary {
+	clear: both;
+}
+
+#homepage #news .news-photos {
+	margin-bottom: 2em;
+}
+
+#homepage #news .news-photos .grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}

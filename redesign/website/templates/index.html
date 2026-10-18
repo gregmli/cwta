@@ -62,33 +62,29 @@
 
 	</div>
 
-	<div class="photo-show">
-		<p>
-			<img src="/images/outdoor-silk-reeling.jpg" width="100%" />
-		</p>
-		<p>
-			<img src="/images/czl2016_seminar_DSC_0007.jpg" width="100%" />
-		</p>
-		<p>
-			<img src="/images/chen-jiagou-2.jpg" width="100%" />
-		</p>
-		<p>
-			<img src="/images/yang-advanced-class.jpg" width="100%" />
-		</p>
-	</div>
-
 	<div class="primary">
 		<div class="description">
-			<p>Welcome to Yijiao Hong's taichi class! Begin a lifelong journey of destressing through correct body posture, authentic Taichi moves, and slow, even and deeper breaths to a calm mind and better health. Have fun with Chinese cultural experiences too! Master Hong will give in-depth, step-by-step instruction on authentic Yang and Chen Taichi movements and Qigong warm-ups from Traditional Chinese Medicine, using the latest in physical learning science. Master Hong will also talk about how Taichi originated from ancient Chinese philosophy, Chinese medicine and Qigong. The beginning class will emphasize the skills of self-centering, body relaxation, and slow breathing while practicing form movements. You can expect increased flexibility, leg strength, coordination, and balance, as well as learning to be relaxed in an energetic way.</p> 
-
-			<p>
-			<strong>Taichi is an ideal aerobic exercise for life time. </strong>
-			Do you know that practicing Taichi maintains spine health and increases bone density? It is beneficial to the cardio-vascular, respiratory, and nervous systems, digestive system, balance and also improves circulation of Chi. Master Hong's long-term Taichi students report that practicing Taichi helps alleviate hypertension, asthma, knee pain, and stress, while also improving mental, body strength and overall happiness.
-			</p>
+			{% include "includes/welcome.html" %}
 			
 		</div>
 
 	</div>
+
+	<div class="primary image-gallery news-photos" aria-label="Taichi class photos">
+		<div class="grid">
+			{% for photo in [
+				('outdoor-silk-reeling.jpg', 'Outdoor silk reeling practice'),
+				('czl2016_seminar_DSC_0007.jpg', 'Chen Zhenglei seminar'),
+				('chen-jiagou-2.jpg', 'Taichi practice in Chen Jiagou'),
+				('yang-advanced-class.jpg', 'Advanced Yang Style Taichi class')
+			] %}
+			<button class="thumbnail" type="button" data-lightbox-src="/images/{{ photo[0] }}" data-lightbox-alt="{{ photo[1] }}" aria-label="Enlarge {{ photo[1] }}">
+				<img src="/images/{{ photo[0] }}" alt="{{ photo[1] }}" loading="lazy" />
+			</button>
+			{% endfor %}
+		</div>
+	</div>
+
 
 	<div class="primary">
 		<h3>Private Seminars</h3>
